@@ -1,0 +1,17 @@
+Information about SEAL
+======================
+
+Optical layout
+______________
+
+.. image:: ../images/SEAL_layout.png
+  :width: 700
+  :alt: SEAL optical layout
+
+Bibliography
+____________
+
+Arxiv links to access papers about SEAL:
+
+    * `R. Jensen-Clem 2021 <https://arxiv.org/abs/2109.03318>`_
+    * `B. Gerard 2022 <https://arxiv.org/abs/2208.03402>`_

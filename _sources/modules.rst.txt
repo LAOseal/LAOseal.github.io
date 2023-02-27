@@ -5,7 +5,9 @@ libSEAL
    :maxdepth: 4
 
    cameras
+   debugStartup
    quickStartup
+   test
    tools
    wfAffectors
    wfSensors

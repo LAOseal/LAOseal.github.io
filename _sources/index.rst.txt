@@ -7,20 +7,16 @@ Welcome to SEAL python library documentation!
 =============================================
 
 .. note::
-   This project is under active development
+   libSEAL is a project is under active development
 
 SEAL is an high-contrast optical testbed located at University California Santa Cruz.
 
-.. centered:: 
-   `Starting SEAL - documentation (google doc) <https://docs.google.com/document/d/1QJwAxyPVzGfPLH_FckHnJxgLYbsrkni-jAYHNoWxCfI/edit?skip_itp2_check=true#heading=h.9pj3zl3hganr>`_
-
-
 .. toctree::
    :maxdepth: 1
-   :caption: Overview:
+   :caption: Getting started:
 
-   layout
-   biblio
+   infoSEAL
+   gitInfo
 
 .. toctree::
    :maxdepth: 1
@@ -28,9 +24,9 @@ SEAL is an high-contrast optical testbed located at University California Santa 
 
    wfAffectors
    wfSensors
+   wfControllers
    cameras
    tools
-   test
 
 .. toctree::
    :maxdepth: 2
