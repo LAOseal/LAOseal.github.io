@@ -12,7 +12,7 @@ Welcome to SEAL python library documentation!
 SEAL is an high-contrast optical testbed located at University California Santa Cruz.
 
 .. centered:: 
-   `Starting SEAL - documentation <https://docs.google.com/document/d/1QJwAxyPVzGfPLH_FckHnJxgLYbsrkni-jAYHNoWxCfI/edit?skip_itp2_check=true#heading=h.9pj3zl3hganr>`_
+   `Starting SEAL - documentation (google doc) <https://docs.google.com/document/d/1QJwAxyPVzGfPLH_FckHnJxgLYbsrkni-jAYHNoWxCfI/edit?skip_itp2_check=true#heading=h.9pj3zl3hganr>`_
 
 
 .. toctree::
@@ -39,9 +39,8 @@ SEAL is an high-contrast optical testbed located at University California Santa 
    quickStartup
    debugStartup
 
-Indices and tables
-==================
+Indices
+=======
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
