@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cameras" href="cameras.html" />
+    <link rel="next" title="Wavefront Controllers" href="wfControllers.html" />
     <link rel="prev" title="Wavefront Affectors" href="wfAffectors.html" /> 
 </head>
 
@@ -42,25 +42,40 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="layout.html">Optical layout</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Wavefront Sensors</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#wfSensors.pyramidWFS"><code class="docutils literal notranslate"><span class="pre">pyramidWFS</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.pupil_tel"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_tel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.pupil_footprint"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.pupil_pad"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.pupil_pad_footprint"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_pad_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.cam"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.cam</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.nPx"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nPx</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.pad"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.mask_phase"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mask_phase</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.mask"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.nIterRec"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nIterRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.nonLinRec"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nonLinRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.doUnwrap"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.doUnwrap</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.backPropag"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.backPropag()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.calibrate"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.calibrate()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.cropImg"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.cropImg()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.getImage"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getImage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.getImageSimu"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getImageSimu()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.getPSF"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getPSF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.img2cmd_map"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.img2cmd_map()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.load_pokeMatrix"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.load_pokeMatrix()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.mapValidCmd"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mapValidCmd()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.propag"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.propag()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.reconGS"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.reconGS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wfSensors.pyramidWFS.reconLinear"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.reconLinear()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#wfSensors.zernikeWFS"><code class="docutils literal notranslate"><span class="pre">zernikeWFS</span></code></a><ul>
@@ -77,9 +92,9 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">test module</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -115,15 +130,152 @@
 <span id="wavefront-sensors"></span><h1>Wavefront Sensors<a class="headerlink" href="#module-wfSensors" title="Permalink to this heading"></a></h1>
 <dl class="simple">
 <dt>Classes for wavefront sensors:</dt><dd><ul class="simple">
-<li><p>4-sided Pyramid WFS</p></li>
+<li><p>non-modulated 4-sided Pyramid WFS</p></li>
 <li><p>Zernike WFS</p></li>
 </ul>
 </dd>
 </dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>More sensors should be added: FAST, modulated PWFS, SHWFS</p>
+</div>
 <dl class="py class">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wfSensors.</span></span><span class="sig-name descname"><span class="pre">pyramidWFS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil_tel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS" title="Permalink to this definition"></a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wfSensors.</span></span><span class="sig-name descname"><span class="pre">pyramidWFS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil_tel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS" title="Permalink to this definition"></a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use the 4-sided PWFS</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.pupil_tel">
+<span class="sig-name descname"><span class="pre">pupil_tel</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.pupil_tel" title="Permalink to this definition"></a></dt>
+<dd><p>pupil intensities</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.pupil_footprint">
+<span class="sig-name descname"><span class="pre">pupil_footprint</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.pupil_footprint" title="Permalink to this definition"></a></dt>
+<dd><p>pupil footprint (0 and 1)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.pupil_pad">
+<span class="sig-name descname"><span class="pre">pupil_pad</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.pupil_pad" title="Permalink to this definition"></a></dt>
+<dd><p>shannon-padded pupil</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.pupil_pad_footprint">
+<span class="sig-name descname"><span class="pre">pupil_pad_footprint</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.pupil_pad_footprint" title="Permalink to this definition"></a></dt>
+<dd><p>shannon-padded pupil footprint</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.cam">
+<span class="sig-name descname"><span class="pre">cam</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.cam" title="Permalink to this definition"></a></dt>
+<dd><p>camera used for this sensor</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>cameras Object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.nPx">
+<span class="sig-name descname"><span class="pre">nPx</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.nPx" title="Permalink to this definition"></a></dt>
+<dd><p>pupil resolution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.pad">
+<span class="sig-name descname"><span class="pre">pad</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.pad" title="Permalink to this definition"></a></dt>
+<dd><p>integer to pad array to shannon</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.mask_phase">
+<span class="sig-name descname"><span class="pre">mask_phase</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.mask_phase" title="Permalink to this definition"></a></dt>
+<dd><p>pyramid mask in phase</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.mask">
+<span class="sig-name descname"><span class="pre">mask</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.mask" title="Permalink to this definition"></a></dt>
+<dd><p>pyramid mask (exp(1j*mask_phase))</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.nIterRec">
+<span class="sig-name descname"><span class="pre">nIterRec</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.nIterRec" title="Permalink to this definition"></a></dt>
+<dd><p>number of iterations for GS algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.nonLinRec">
+<span class="sig-name descname"><span class="pre">nonLinRec</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.nonLinRec" title="Permalink to this definition"></a></dt>
+<dd><p>choose if using non-linear reconstructor while reconstructing DM commands - 1 by default</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.doUnwrap">
+<span class="sig-name descname"><span class="pre">doUnwrap</span></span><a class="headerlink" href="#wfSensors.pyramidWFS.doUnwrap" title="Permalink to this definition"></a></dt>
+<dd><p>choose if reconstructed phase is unwrapped - 0 by default</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS.backPropag">
 <span class="sig-name descname"><span class="pre">backPropag</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.backPropag" title="Permalink to this definition"></a></dt>
@@ -142,12 +294,25 @@
 <dl class="py method">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS.getImage">
 <span class="sig-name descname"><span class="pre">getImage</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getImage" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Record True image</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.getImageSimu">
+<span class="sig-name descname"><span class="pre">getImageSimu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getImageSimu" title="Permalink to this definition"></a></dt>
+<dd><p>Simulation of Zernike WFS image</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS.getPSF">
 <span class="sig-name descname"><span class="pre">getPSF</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getPSF" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.img2cmd_map">
+<span class="sig-name descname"><span class="pre">img2cmd_map</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd_map" title="Permalink to this definition"></a></dt>
+<dd><p>Full reconstruction of the signal: imgage to DM commands</p>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS.load_pokeMatrix">
@@ -166,8 +331,17 @@
 
 <dl class="py method">
 <dt class="sig sig-object py" id="wfSensors.pyramidWFS.reconGS">
-<span class="sig-name descname"><span class="pre">reconGS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.reconGS" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<span class="sig-name descname"><span class="pre">reconGS</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.reconGS" title="Permalink to this definition"></a></dt>
+<dd><p>Non-linear reconstructor using GS algorithm
+img: PWFS recorded image (dark removed)
+nIter: number of iteration for the reconstructor</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="wfSensors.pyramidWFS.reconLinear">
+<span class="sig-name descname"><span class="pre">reconLinear</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.reconLinear" title="Permalink to this definition"></a></dt>
+<dd><p>Linear reconstructor using synthetic interaction matrix</p>
+</dd></dl>
 
 </dd></dl>
 
@@ -229,7 +403,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="wfAffectors.html" class="btn btn-neutral float-left" title="Wavefront Affectors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cameras.html" class="btn btn-neutral float-right" title="Cameras" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="wfControllers.html" class="btn btn-neutral float-right" title="Wavefront Controllers" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

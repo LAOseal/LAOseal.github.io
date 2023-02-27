@@ -79,3 +79,5 @@ Git basic commands:
 
     git checkout master
     git merge <new_branch>
+
+If you want your modifications to be added right away in the documentation, please contact *vchambou@ucsc.edu*.

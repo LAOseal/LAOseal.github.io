@@ -48,7 +48,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">wfControllers module</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
 </ul>
@@ -112,6 +112,10 @@
       <li><a href="cameras.html#cameras.Andor_camera">Andor_camera (class in cameras)</a>
 </li>
   </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="tools.html#tools.applyQ">applyQ() (in module tools)</a>
+</li>
+  </ul></td>
 </tr></table>
 
 <h2 id="B">B</h2>
@@ -143,7 +147,11 @@
 <h2 id="C">C</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfControllers.html#wfControllers.integrator.C">C (wfControllers.integrator attribute)</a>
+</li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.calibrate">calibrate() (wfSensors.pyramidWFS method)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.cam">cam (wfSensors.pyramidWFS attribute)</a>
 </li>
       <li>
     cameras
@@ -159,6 +167,8 @@
       <li><a href="wfAffectors.html#wfAffectors.SLM.center_y">center_y (wfAffectors.SLM attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.Clipping">Clipping (wfAffectors.DM attribute)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator.closeLoop">closeLoop() (wfControllers.integrator method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.createTurbuCube">createTurbuCube() (wfAffectors.SLM method)</a>
 </li>
@@ -181,13 +191,19 @@
         <li><a href="debugStartup.html#module-debugStartup">module</a>
 </li>
       </ul></li>
+      <li><a href="wfControllers.html#wfControllers.integrator.display">display (wfControllers.integrator attribute)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cameras.html#cameras.BlackFly_camera.dit">dit (cameras.BlackFly_camera attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM">DM (class in wfAffectors)</a>
 </li>
+      <li><a href="wfControllers.html#wfControllers.integrator.dm">dm (wfControllers.integrator attribute)</a>
+</li>
       <li><a href="wfAffectors.html#wfAffectors.DM.DmChannel">DmChannel (wfAffectors.DM attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.doUnwrap">doUnwrap (wfSensors.pyramidWFS attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -229,14 +245,16 @@
 </li>
       <li><a href="cameras.html#cameras.BlackFly_camera.getDark">getDark() (cameras.BlackFly_camera method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.getImage">getImage() (wfSensors.pyramidWFS method)</a>
 
       <ul>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.getImage">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.getImageSimu">getImageSimu() (wfSensors.pyramidWFS method)</a>
+</li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.getPSF">getPSF() (wfSensors.pyramidWFS method)</a>
 
       <ul>
@@ -253,11 +271,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#tools.ifft_centre">ifft_centre() (in module tools)</a>
 </li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.img2cmd_map">img2cmd_map() (wfSensors.pyramidWFS method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cameras.html#cameras.BlackFly_camera.imShm">imShm (cameras.BlackFly_camera attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.initTurbu">initTurbu() (wfAffectors.SLM method)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator">integrator (class in wfControllers)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -265,7 +287,13 @@
 <h2 id="L">L</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfControllers.html#wfControllers.integrator.leak">leak (wfControllers.integrator attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.load_pokeMatrix">load_pokeMatrix() (wfSensors.pyramidWFS method)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator.loopgain">loopgain (wfControllers.integrator attribute)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -280,6 +308,14 @@
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.mapValidCmd">mapValidCmd() (wfSensors.pyramidWFS method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.mask">mask (wfAffectors.SLM attribute)</a>
+
+      <ul>
+        <li><a href="wfSensors.html#wfSensors.pyramidWFS.mask">(wfSensors.pyramidWFS attribute)</a>
+</li>
+      </ul></li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.mask_phase">mask_phase (wfSensors.pyramidWFS attribute)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator.modalCtrl">modalCtrl (wfControllers.integrator attribute)</a>
 </li>
       <li><a href="cameras.html#cameras.BlackFly_camera.model">model (cameras.BlackFly_camera attribute)</a>
 
@@ -287,6 +323,8 @@
         <li><a href="wfAffectors.html#wfAffectors.DM.model">(wfAffectors.DM attribute)</a>
 </li>
       </ul></li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     module
 
@@ -316,14 +354,22 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.newFlat">newFlat() (wfAffectors.DM method)</a>
 </li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.nIterRec">nIterRec (wfSensors.pyramidWFS attribute)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator.nModes">nModes (wfControllers.integrator attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.nonLinRec">nonLinRec (wfSensors.pyramidWFS attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="cameras.html#cameras.BlackFly_camera.nPx">nPx (cameras.BlackFly_camera attribute)</a>
 
       <ul>
         <li><a href="wfAffectors.html#wfAffectors.SLM.nPx">(wfAffectors.SLM attribute)</a>
 </li>
+        <li><a href="wfSensors.html#wfSensors.pyramidWFS.nPx">(wfSensors.pyramidWFS attribute)</a>
+</li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.SLM.nPx_x">nPx_x (wfAffectors.SLM attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.nPx_y">nPx_y (wfAffectors.SLM attribute)</a>
@@ -334,9 +380,15 @@
 <h2 id="P">P</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.pad">pad (wfSensors.pyramidWFS attribute)</a>
+</li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.paddingArray">paddingArray() (wfAffectors.SLM method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.phase2bitmap">phase2bitmap() (wfAffectors.SLM method)</a>
+</li>
+      <li><a href="tools.html#tools.phase_unwrap">phase_unwrap() (in module tools)</a>
+</li>
+      <li><a href="tools.html#tools.phase_unwrap_ref">phase_unwrap_ref() (in module tools)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.pokeAct">pokeAct() (wfAffectors.DM method)</a>
 </li>
@@ -344,11 +396,13 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.pokeWaffle">pokeWaffle() (wfAffectors.DM method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.DM.pokeWaffleLarge">pokeWaffleLarge() (wfAffectors.DM method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.DM.pokeZernike">pokeZernike() (wfAffectors.DM method)</a>
+</li>
+      <li><a href="tools.html#tools.precomp_Poissonscaling">precomp_Poissonscaling() (in module tools)</a>
 </li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.propag">propag() (wfSensors.pyramidWFS method)</a>
 
@@ -357,6 +411,14 @@
 </li>
       </ul></li>
       <li><a href="wfSensors.html#wfSensors.zernikeWFS.propagRef">propagRef() (wfSensors.zernikeWFS method)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.pupil_footprint">pupil_footprint (wfSensors.pyramidWFS attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.pupil_pad">pupil_pad (wfSensors.pyramidWFS attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.pupil_pad_footprint">pupil_pad_footprint (wfSensors.pyramidWFS attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.pupil_tel">pupil_tel (wfSensors.pyramidWFS attribute)</a>
 </li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS">pyramidWFS (class in wfSensors)</a>
 </li>
@@ -387,9 +449,11 @@
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.reconGS">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
+      <li><a href="wfSensors.html#wfSensors.zernikeWFS.reconJPL">reconJPL() (wfSensors.zernikeWFS method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="wfSensors.html#wfSensors.zernikeWFS.reconJPL">reconJPL() (wfSensors.zernikeWFS method)</a>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.reconLinear">reconLinear() (wfSensors.pyramidWFS method)</a>
 </li>
       <li><a href="wfSensors.html#wfSensors.zernikeWFS.reconPhaseShifted">reconPhaseShifted() (wfSensors.zernikeWFS method)</a>
 </li>
@@ -415,13 +479,15 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.setPhase">setPhase() (wfAffectors.SLM method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.SLM.setPosition">setPosition() (wfAffectors.SLM method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.setSurf">setSurf() (wfAffectors.DM method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.SLM.setTurbu">setTurbu() (wfAffectors.SLM method)</a>
+</li>
+      <li><a href="wfControllers.html#wfControllers.integrator.showDisplay">showDisplay() (wfControllers.integrator method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM.showSurf">showSurf() (wfAffectors.DM method)</a>
 </li>
@@ -433,6 +499,10 @@
       </ul></li>
       <li><a href="wfAffectors.html#wfAffectors.SLM">SLM (class in wfAffectors)</a>
 </li>
+      <li><a href="tools.html#tools.solvePoisson">solvePoisson() (in module tools)</a>
+</li>
+      <li><a href="tools.html#tools.solvePoisson_precomped">solvePoisson_precomped() (in module tools)</a>
+</li>
   </ul></td>
 </tr></table>
 
@@ -441,6 +511,10 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#tools.take_image_pupils">take_image_pupils() (in module tools)</a>
 </li>
+      <li><a href="wfControllers.html#wfControllers.integrator.timeStop">timeStop (wfControllers.integrator attribute)</a>
+</li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li>
     tools
 
@@ -448,8 +522,6 @@
         <li><a href="tools.html#module-tools">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#tools.transformation_dm2wfs">transformation_dm2wfs() (in module tools)</a>
 </li>
   </ul></td>
@@ -482,6 +554,8 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfControllers.html#wfControllers.integrator.wfs">wfs (wfControllers.integrator attribute)</a>
+</li>
       <li>
     wfSensors
 

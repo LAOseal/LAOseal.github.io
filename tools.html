@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="test module" href="test.html" />
+    <link rel="next" title="Quick Startup Script" href="quickStartup.html" />
     <link rel="prev" title="Cameras" href="cameras.html" /> 
 </head>
 
@@ -42,17 +42,19 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">Getting started:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="layout.html">Optical layout</a></li>
-<li class="toctree-l1"><a class="reference internal" href="biblio.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Useful Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tools.applyQ"><code class="docutils literal notranslate"><span class="pre">applyQ()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.binArray"><code class="docutils literal notranslate"><span class="pre">binArray()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.binIM"><code class="docutils literal notranslate"><span class="pre">binIM()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.build_pokeMatrix"><code class="docutils literal notranslate"><span class="pre">build_pokeMatrix()</span></code></a></li>
@@ -64,12 +66,16 @@
 <li class="toctree-l2"><a class="reference internal" href="#tools.gauss2d"><code class="docutils literal notranslate"><span class="pre">gauss2d()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.ifft_centre"><code class="docutils literal notranslate"><span class="pre">ifft_centre()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.makePupil"><code class="docutils literal notranslate"><span class="pre">makePupil()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.phase_unwrap"><code class="docutils literal notranslate"><span class="pre">phase_unwrap()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.phase_unwrap_ref"><code class="docutils literal notranslate"><span class="pre">phase_unwrap_ref()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.precomp_Poissonscaling"><code class="docutils literal notranslate"><span class="pre">precomp_Poissonscaling()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.solvePoisson"><code class="docutils literal notranslate"><span class="pre">solvePoisson()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.solvePoisson_precomped"><code class="docutils literal notranslate"><span class="pre">solvePoisson_precomped()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.take_image_pupils"><code class="docutils literal notranslate"><span class="pre">take_image_pupils()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.transformation_dm2wfs"><code class="docutils literal notranslate"><span class="pre">transformation_dm2wfs()</span></code></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tools.zernikeBasis"><code class="docutils literal notranslate"><span class="pre">zernikeBasis()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="test.html">test module</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -104,6 +110,12 @@
   <section id="module-tools">
 <span id="useful-tools"></span><h1>Useful Tools<a class="headerlink" href="#module-tools" title="Permalink to this heading"></a></h1>
 <p>Useful functions for different purposes</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.applyQ">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">applyQ</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WWx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WWy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.applyQ" title="Permalink to this definition"></a></dt>
+<dd><p>Apply the weighted transformation (A^T)(W^T)(W)(A) to 2D matrix p</p>
+</dd></dl>
+
 <dl class="py function">
 <dt class="sig sig-object py" id="tools.binArray">
 <span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">binArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binArray" title="Permalink to this definition"></a></dt>
@@ -160,6 +172,51 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt class="sig sig-object py" id="tools.phase_unwrap">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">phase_unwrap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.phase_unwrap" title="Permalink to this definition"></a></dt>
+<dd><p>Unwrap the phase of an image psi given weights weight
+This function uses an algorithm described by Ghiglia and Romero
+and can either be used with or without weight array.
+It is especially suited to recover a unwrapped phase image
+from a (noisy) complex type image, where psi would be
+the angle of the complex values and weight the absolute values
+of the complex image.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.phase_unwrap_ref">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">phase_unwrap_ref</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.phase_unwrap_ref" title="Permalink to this definition"></a></dt>
+<dd><p>A weighed phase unwrap algorithm implemented in pure Python
+author: Tobias A. de Jong
+Based on:
+Ghiglia, Dennis C., and Louis A. Romero.
+“Robust two-dimensional weighted and unweighted phase unwrapping that uses
+fast transforms and iterative methods.” JOSA A 11.1 (1994): 107-117.
+URL: <a class="reference external" href="https://doi.org/10.1364/JOSAA.11.000107">https://doi.org/10.1364/JOSAA.11.000107</a>
+and an existing MATLAB implementation:
+<a class="reference external" href="https://nl.mathworks.com/matlabcentral/fileexchange/60345-2d-weighted-phase-unwrapping">https://nl.mathworks.com/matlabcentral/fileexchange/60345-2d-weighted-phase-unwrapping</a>
+Should maybe use a scipy conjugate descent.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.precomp_Poissonscaling">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">precomp_Poissonscaling</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.precomp_Poissonscaling" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.solvePoisson">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">solvePoisson</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.solvePoisson" title="Permalink to this definition"></a></dt>
+<dd><p>Solve the poisson equation “P phi = rho” using DCT</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.solvePoisson_precomped">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">solvePoisson_precomped</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.solvePoisson_precomped" title="Permalink to this definition"></a></dt>
+<dd><p>Solve the poisson equation “P phi = rho” using DCT
+Uses precomputed scaling factors <cite>scale</cite></p>
+</dd></dl>
+
+<dl class="py function">
 <dt class="sig sig-object py" id="tools.take_image_pupils">
 <span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">take_image_pupils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.take_image_pupils" title="Permalink to this definition"></a></dt>
 <dd></dd></dl>
@@ -181,7 +238,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="cameras.html" class="btn btn-neutral float-left" title="Cameras" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="test.html" class="btn btn-neutral float-right" title="test module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickStartup.html" class="btn btn-neutral float-right" title="Quick Startup Script" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

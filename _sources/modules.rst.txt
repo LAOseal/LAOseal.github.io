@@ -7,7 +7,6 @@ libSEAL
    cameras
    debugStartup
    quickStartup
-   test
    tools
    wfAffectors
    wfSensors

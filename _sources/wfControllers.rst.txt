@@ -1,5 +1,5 @@
-wfControllers module
-====================
+Wavefront Controllers
+=====================
 
 .. automodule:: wfControllers
    :members:
