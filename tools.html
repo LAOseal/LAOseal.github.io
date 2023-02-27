@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Useful Tools &mdash; libSEAL 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="test module" href="test.html" />
+    <link rel="prev" title="Cameras" href="cameras.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Overview:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="layout.html">Optical layout</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">SEAL Classes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Useful Tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tools.binArray"><code class="docutils literal notranslate"><span class="pre">binArray()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.binIM"><code class="docutils literal notranslate"><span class="pre">binIM()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.build_pokeMatrix"><code class="docutils literal notranslate"><span class="pre">build_pokeMatrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.build_poke_matrix_wfs"><code class="docutils literal notranslate"><span class="pre">build_poke_matrix_wfs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.error_rms"><code class="docutils literal notranslate"><span class="pre">error_rms()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.fft_centre"><code class="docutils literal notranslate"><span class="pre">fft_centre()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.fig"><code class="docutils literal notranslate"><span class="pre">fig()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.findPWFS_param"><code class="docutils literal notranslate"><span class="pre">findPWFS_param()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.gauss2d"><code class="docutils literal notranslate"><span class="pre">gauss2d()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.ifft_centre"><code class="docutils literal notranslate"><span class="pre">ifft_centre()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.makePupil"><code class="docutils literal notranslate"><span class="pre">makePupil()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.take_image_pupils"><code class="docutils literal notranslate"><span class="pre">take_image_pupils()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.transformation_dm2wfs"><code class="docutils literal notranslate"><span class="pre">transformation_dm2wfs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tools.zernikeBasis"><code class="docutils literal notranslate"><span class="pre">zernikeBasis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="test.html">test module</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Useful scripts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick Startup Script</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - debug mode</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">libSEAL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Useful Tools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tools">
+<span id="useful-tools"></span><h1>Useful Tools<a class="headerlink" href="#module-tools" title="Permalink to this heading"></a></h1>
+<p>Useful functions for different purposes</p>
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.binArray">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">binArray</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binArray" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.binIM">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">binIM</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binIM" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.build_pokeMatrix">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">build_pokeMatrix</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">PWFS</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.build_pokeMatrix" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.build_poke_matrix_wfs">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">build_poke_matrix_wfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xx_wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yy_wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.build_poke_matrix_wfs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.error_rms">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">error_rms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.error_rms" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.fft_centre">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">fft_centre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fft_centre" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.fig">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">fig</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fig" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.findPWFS_param">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">findPWFS_param</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.findPWFS_param" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.gauss2d">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">gauss2d</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.gauss2d" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.ifft_centre">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">ifft_centre</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.ifft_centre" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.makePupil">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">makePupil</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rpx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.makePupil" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.take_image_pupils">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">take_image_pupils</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.take_image_pupils" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.transformation_dm2wfs">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">transformation_dm2wfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_wfs_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_wfs_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_dm_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_dm_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xx_dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yy_dm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.transformation_dm2wfs" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="tools.zernikeBasis">
+<span class="sig-prename descclassname"><span class="pre">tools.</span></span><span class="sig-name descname"><span class="pre">zernikeBasis</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.zernikeBasis" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cameras.html" class="btn btn-neutral float-left" title="Cameras" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="test.html" class="btn btn-neutral float-right" title="test module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, V.Chambouleyron.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

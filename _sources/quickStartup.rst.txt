@@ -1,0 +1,7 @@
+Quick Startup Script
+====================
+
+.. automodule:: quickStartup
+   :members:
+   :undoc-members:
+   :show-inheritance:

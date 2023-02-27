@@ -1,0 +1,7 @@
+Bibliography
+============
+
+Arxiv links to access papers about SEAL:
+
+    * `R. Jensen-Clem 2021 <https://arxiv.org/abs/2109.03318>`_
+    * `B. Gerard 2022 <https://arxiv.org/abs/2208.03402>`_
