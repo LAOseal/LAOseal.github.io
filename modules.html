@@ -88,15 +88,185 @@
 <h1>libSEAL<a class="headerlink" href="#libseal" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="cameras.html#cameras.Andor_camera"><code class="docutils literal notranslate"><span class="pre">Andor_camera</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="cameras.html#cameras.blackFly_camera"><code class="docutils literal notranslate"><span class="pre">blackFly_camera</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.model"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.binning"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.binning</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.imShm"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.imShm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.dit"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.dit</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.dark"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.dark</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.nPx"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.nPx</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.get"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.get()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.getDark"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.getDark()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.get_exp"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.get_exp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.set_exp"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.set_exp()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="cameras.html#cameras.blackFly_camera.shutdown"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.shutdown()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.applyQ"><code class="docutils literal notranslate"><span class="pre">applyQ()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.binArray"><code class="docutils literal notranslate"><span class="pre">binArray()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.binIM"><code class="docutils literal notranslate"><span class="pre">binIM()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.build_pokeMatrix"><code class="docutils literal notranslate"><span class="pre">build_pokeMatrix()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.build_poke_matrix_wfs"><code class="docutils literal notranslate"><span class="pre">build_poke_matrix_wfs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.error_rms"><code class="docutils literal notranslate"><span class="pre">error_rms()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.extract_pupil"><code class="docutils literal notranslate"><span class="pre">extract_pupil()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.fft_centre"><code class="docutils literal notranslate"><span class="pre">fft_centre()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.fig"><code class="docutils literal notranslate"><span class="pre">fig()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.findPWFS_param"><code class="docutils literal notranslate"><span class="pre">findPWFS_param()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.gauss2d"><code class="docutils literal notranslate"><span class="pre">gauss2d()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.ifft_centre"><code class="docutils literal notranslate"><span class="pre">ifft_centre()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.makePupil"><code class="docutils literal notranslate"><span class="pre">makePupil()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.phase_unwrap"><code class="docutils literal notranslate"><span class="pre">phase_unwrap()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.phase_unwrap_ref"><code class="docutils literal notranslate"><span class="pre">phase_unwrap_ref()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.precomp_Poissonscaling"><code class="docutils literal notranslate"><span class="pre">precomp_Poissonscaling()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.solvePoisson"><code class="docutils literal notranslate"><span class="pre">solvePoisson()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.solvePoisson_precomped"><code class="docutils literal notranslate"><span class="pre">solvePoisson_precomped()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.take_image_pupils"><code class="docutils literal notranslate"><span class="pre">take_image_pupils()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.transformation_dm2wfs"><code class="docutils literal notranslate"><span class="pre">transformation_dm2wfs()</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#tools.zernikeBasis"><code class="docutils literal notranslate"><span class="pre">zernikeBasis()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="turbulence.html#turbulence.atm"><code class="docutils literal notranslate"><span class="pre">atm</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="turbulence.html#turbulence.atm.model"><code class="docutils literal notranslate"><span class="pre">atm.model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="turbulence.html#turbulence.atm.setTurbu"><code class="docutils literal notranslate"><span class="pre">atm.setTurbu()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal"><code class="docutils literal notranslate"><span class="pre">DM_seal</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.model"><code class="docutils literal notranslate"><span class="pre">DM_seal.model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.DmChannel"><code class="docutils literal notranslate"><span class="pre">DM_seal.DmChannel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.Z2C"><code class="docutils literal notranslate"><span class="pre">DM_seal.Z2C</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.Clipping"><code class="docutils literal notranslate"><span class="pre">DM_seal.Clipping</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.nAct"><code class="docutils literal notranslate"><span class="pre">DM_seal.nAct</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.valid_actuators_map"><code class="docutils literal notranslate"><span class="pre">DM_seal.valid_actuators_map</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.flat_surf"><code class="docutils literal notranslate"><span class="pre">DM_seal.flat_surf</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.current_surf"><code class="docutils literal notranslate"><span class="pre">DM_seal.current_surf</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.getSurf"><code class="docutils literal notranslate"><span class="pre">DM_seal.getSurf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.mapCmd"><code class="docutils literal notranslate"><span class="pre">DM_seal.mapCmd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.newFlat"><code class="docutils literal notranslate"><span class="pre">DM_seal.newFlat()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.pokeAct"><code class="docutils literal notranslate"><span class="pre">DM_seal.pokeAct()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.pokeAllAct"><code class="docutils literal notranslate"><span class="pre">DM_seal.pokeAllAct()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.pokeWaffle"><code class="docutils literal notranslate"><span class="pre">DM_seal.pokeWaffle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.pokeWaffleLarge"><code class="docutils literal notranslate"><span class="pre">DM_seal.pokeWaffleLarge()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.pokeZernike"><code class="docutils literal notranslate"><span class="pre">DM_seal.pokeZernike()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.setFlatSurf"><code class="docutils literal notranslate"><span class="pre">DM_seal.setFlatSurf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.setSurf"><code class="docutils literal notranslate"><span class="pre">DM_seal.setSurf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.showSurf"><code class="docutils literal notranslate"><span class="pre">DM_seal.showSurf()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.DM_seal.shutdown"><code class="docutils literal notranslate"><span class="pre">DM_seal.shutdown()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wfAffectors.html#wfAffectors.FSM"><code class="docutils literal notranslate"><span class="pre">FSM</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM"><code class="docutils literal notranslate"><span class="pre">SLM</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.nPx_x"><code class="docutils literal notranslate"><span class="pre">SLM.nPx_x</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.nPx_y"><code class="docutils literal notranslate"><span class="pre">SLM.nPx_y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.nPx"><code class="docutils literal notranslate"><span class="pre">SLM.nPx</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.center_x"><code class="docutils literal notranslate"><span class="pre">SLM.center_x</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.center_y"><code class="docutils literal notranslate"><span class="pre">SLM.center_y</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.mask"><code class="docutils literal notranslate"><span class="pre">SLM.mask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.paddingArray"><code class="docutils literal notranslate"><span class="pre">SLM.paddingArray()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.phase2bitmap"><code class="docutils literal notranslate"><span class="pre">SLM.phase2bitmap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.pokeZernike"><code class="docutils literal notranslate"><span class="pre">SLM.pokeZernike()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.reset"><code class="docutils literal notranslate"><span class="pre">SLM.reset()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.setAmplitude"><code class="docutils literal notranslate"><span class="pre">SLM.setAmplitude()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.setBitmap"><code class="docutils literal notranslate"><span class="pre">SLM.setBitmap()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.setPhase"><code class="docutils literal notranslate"><span class="pre">SLM.setPhase()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.SLM.setPosition"><code class="docutils literal notranslate"><span class="pre">SLM.setPosition()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror"><code class="docutils literal notranslate"><span class="pre">segmentedMirror</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.socket"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.socket</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.applyMode"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.applyMode()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.applySegment"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.applySegment()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.initMirror"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.initMirror()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.pistonAll"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.pistonAll()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.releaseMirror"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.releaseMirror()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfAffectors.html#wfAffectors.segmentedMirror.stopServer"><code class="docutils literal notranslate"><span class="pre">segmentedMirror.stopServer()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wfControllers.html#wfControllers.integrator"><code class="docutils literal notranslate"><span class="pre">integrator</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.wfs"><code class="docutils literal notranslate"><span class="pre">integrator.wfs</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.dm"><code class="docutils literal notranslate"><span class="pre">integrator.dm</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.C"><code class="docutils literal notranslate"><span class="pre">integrator.C</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.loopgain"><code class="docutils literal notranslate"><span class="pre">integrator.loopgain</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.leak"><code class="docutils literal notranslate"><span class="pre">integrator.leak</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.display"><code class="docutils literal notranslate"><span class="pre">integrator.display</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.modalCtrl"><code class="docutils literal notranslate"><span class="pre">integrator.modalCtrl</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.nModes"><code class="docutils literal notranslate"><span class="pre">integrator.nModes</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.timeStop"><code class="docutils literal notranslate"><span class="pre">integrator.timeStop</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.closeLoop"><code class="docutils literal notranslate"><span class="pre">integrator.closeLoop()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfControllers.html#wfControllers.integrator.showDisplay"><code class="docutils literal notranslate"><span class="pre">integrator.showDisplay()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS"><code class="docutils literal notranslate"><span class="pre">pyramidWFS</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.pupil_tel"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_tel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.pupil_footprint"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.pupil_pad"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.pupil_pad_footprint"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pupil_pad_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.cam"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.cam</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.nPx"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nPx</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.pad"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.mask_phase"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mask_phase</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.mask"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.nIterRec"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nIterRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.nonLinRec"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.nonLinRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.doUnwrap"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.doUnwrap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.backPropag"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.backPropag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.calibrate"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.calibrate()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.cropImg"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.cropImg()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.getImage"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getImage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.getImageSimu"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getImageSimu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.getPSF"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.getPSF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.img2cmd_map"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.img2cmd_map()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.load_pokeMatrix"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.load_pokeMatrix()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.mapValidCmd"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.mapValidCmd()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.propag"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.propag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.reconGS"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.reconGS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.pyramidWFS.reconLinear"><code class="docutils literal notranslate"><span class="pre">pyramidWFS.reconLinear()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS"><code class="docutils literal notranslate"><span class="pre">zernikeWFS</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.pupil_tel"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.pupil_tel</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.pupil_footprint"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.pupil_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.pupil_pad"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.pupil_pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.pupil_pad_footprint"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.pupil_pad_footprint</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.cam"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.cam</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.nPx"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.nPx</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.pad"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.pad</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.mask_phase"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.mask_phase</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.mask"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.mask</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.nIterRec"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.nIterRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.nonLinRec"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.nonLinRec</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.doUnwrap"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.doUnwrap</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.backPropag"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.backPropag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.getImage"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.getImage()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.getImageSimu"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.getImageSimu()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.getPSF"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.getPSF()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.propag"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.propag()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.propagRef"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.propagRef()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.reconDiversity"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.reconDiversity()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.reconGS"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.reconGS()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.reconJPL"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.reconJPL()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="wfSensors.html#wfSensors.zernikeWFS.reconPhaseShifted"><code class="docutils literal notranslate"><span class="pre">zernikeWFS.reconPhaseShifted()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </div>
 </section>

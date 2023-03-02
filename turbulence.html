@@ -52,7 +52,14 @@
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Generating turbulence</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Generating turbulence</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#turbulence.atm"><code class="docutils literal notranslate"><span class="pre">atm</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#turbulence.atm.model"><code class="docutils literal notranslate"><span class="pre">atm.model</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#turbulence.atm.setTurbu"><code class="docutils literal notranslate"><span class="pre">atm.setTurbu()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 </ul>
@@ -86,8 +93,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="generating-turbulence">
-<h1>Generating turbulence<a class="headerlink" href="#generating-turbulence" title="Permalink to this heading"></a></h1>
+  <section id="module-turbulence">
+<span id="generating-turbulence"></span><h1>Generating turbulence<a class="headerlink" href="#module-turbulence" title="Permalink to this heading"></a></h1>
+<p>Turbulence generator class.</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="turbulence.atm">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">turbulence.</span></span><span class="sig-name descname"><span class="pre">atm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">telescope_diameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.350000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fried_parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeSampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wfAffector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turbulence.atm" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to generate turublence.</p>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="turbulence.atm.model">
+<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#turbulence.atm.model" title="Permalink to this definition"></a></dt>
+<dd><p>model of the DM, can be either ‘mems’ or ‘alpao’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="turbulence.atm.setTurbu">
+<span class="sig-name descname"><span class="pre">setTurbu</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turbulence.atm.setTurbu" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 
