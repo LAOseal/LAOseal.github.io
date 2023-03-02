@@ -18,7 +18,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Cameras" href="cameras.html" />
+    <link rel="next" title="Generating turbulence" href="turbulence.html" />
     <link rel="prev" title="Wavefront Sensors" href="wfSensors.html" /> 
 </head>
 
@@ -51,30 +51,15 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Wavefront Controllers</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#wfControllers.integrator"><code class="docutils literal notranslate"><span class="pre">integrator</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.wfs"><code class="docutils literal notranslate"><span class="pre">integrator.wfs</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.dm"><code class="docutils literal notranslate"><span class="pre">integrator.dm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.C"><code class="docutils literal notranslate"><span class="pre">integrator.C</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.loopgain"><code class="docutils literal notranslate"><span class="pre">integrator.loopgain</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.leak"><code class="docutils literal notranslate"><span class="pre">integrator.leak</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.display"><code class="docutils literal notranslate"><span class="pre">integrator.display</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.modalCtrl"><code class="docutils literal notranslate"><span class="pre">integrator.modalCtrl</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.nModes"><code class="docutils literal notranslate"><span class="pre">integrator.nModes</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.timeStop"><code class="docutils literal notranslate"><span class="pre">integrator.timeStop</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.closeLoop"><code class="docutils literal notranslate"><span class="pre">integrator.closeLoop()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#wfControllers.integrator.showDisplay"><code class="docutils literal notranslate"><span class="pre">integrator.showDisplay()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Wavefront Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
 <li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Useful scripts:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick Startup Script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
 </ul>
 
         </div>
@@ -101,127 +86,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-wfControllers">
-<span id="wavefront-controllers"></span><h1>Wavefront Controllers<a class="headerlink" href="#module-wfControllers" title="Permalink to this heading"></a></h1>
-<p>Classes to choose and run control startegies on the wavefront.</p>
-<dl class="py class">
-<dt class="sig sig-object py" id="wfControllers.integrator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">wfControllers.</span></span><span class="sig-name descname"><span class="pre">integrator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfControllers.integrator" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is a class to use integrator controller to close loop on SEAL.</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.wfs">
-<span class="sig-name descname"><span class="pre">wfs</span></span><a class="headerlink" href="#wfControllers.integrator.wfs" title="Permalink to this definition"></a></dt>
-<dd><p>wfs to be use for close loop</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>wfSensors object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.dm">
-<span class="sig-name descname"><span class="pre">dm</span></span><a class="headerlink" href="#wfControllers.integrator.dm" title="Permalink to this definition"></a></dt>
-<dd><p>DM to be use for close loop</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>wfAffectors object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.C">
-<span class="sig-name descname"><span class="pre">C</span></span><a class="headerlink" href="#wfControllers.integrator.C" title="Permalink to this definition"></a></dt>
-<dd><p>integrated commands on DM during close loop</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.loopgain">
-<span class="sig-name descname"><span class="pre">loopgain</span></span><a class="headerlink" href="#wfControllers.integrator.loopgain" title="Permalink to this definition"></a></dt>
-<dd><p>integrator gain</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.leak">
-<span class="sig-name descname"><span class="pre">leak</span></span><a class="headerlink" href="#wfControllers.integrator.leak" title="Permalink to this definition"></a></dt>
-<dd><p>leak factor in control law</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.display">
-<span class="sig-name descname"><span class="pre">display</span></span><a class="headerlink" href="#wfControllers.integrator.display" title="Permalink to this definition"></a></dt>
-<dd><p>run display while closing loop</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.modalCtrl">
-<span class="sig-name descname"><span class="pre">modalCtrl</span></span><a class="headerlink" href="#wfControllers.integrator.modalCtrl" title="Permalink to this definition"></a></dt>
-<dd><p>enable modal control - set to 0 by default</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>bool</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.nModes">
-<span class="sig-name descname"><span class="pre">nModes</span></span><a class="headerlink" href="#wfControllers.integrator.nModes" title="Permalink to this definition"></a></dt>
-<dd><p>number of controlled modes in case of modalCtrl = True</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="wfControllers.integrator.timeStop">
-<span class="sig-name descname"><span class="pre">timeStop</span></span><a class="headerlink" href="#wfControllers.integrator.timeStop" title="Permalink to this definition"></a></dt>
-<dd><p>time pause in code between DM commands and WFS detection</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>float</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="wfControllers.integrator.closeLoop">
-<span class="sig-name descname"><span class="pre">closeLoop</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nIter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfControllers.integrator.closeLoop" title="Permalink to this definition"></a></dt>
-<dd><p>Closing the Loop</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="wfControllers.integrator.showDisplay">
-<span class="sig-name descname"><span class="pre">showDisplay</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfControllers.integrator.showDisplay" title="Permalink to this definition"></a></dt>
-<dd><p>Plotting figures during close loop</p>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="wavefront-controllers">
+<h1>Wavefront Controllers<a class="headerlink" href="#wavefront-controllers" title="Permalink to this heading"></a></h1>
 </section>
 
 
@@ -229,7 +95,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="wfSensors.html" class="btn btn-neutral float-left" title="Wavefront Sensors" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="cameras.html" class="btn btn-neutral float-right" title="Cameras" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="turbulence.html" class="btn btn-neutral float-right" title="Generating turbulence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

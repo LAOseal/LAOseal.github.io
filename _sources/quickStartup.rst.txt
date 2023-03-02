@@ -1,5 +1,5 @@
-Quick Startup Script
-====================
+Quick startup
+=============
 
 .. automodule:: quickStartup
    :members:

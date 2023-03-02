@@ -25,6 +25,7 @@ SEAL is an high-contrast optical testbed located at University California Santa 
    wfAffectors
    wfSensors
    wfControllers
+   turbulence
    cameras
    tools
 

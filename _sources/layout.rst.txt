@@ -1,6 +1,0 @@
-Optical layout
-==============
-
-.. image:: ../images/SEAL_layout.png
-  :width: 700
-  :alt: SEAL optical layout

@@ -1,4 +1,4 @@
-Startup - debug mode
+Startup - Debug mode
 ====================
 
 .. automodule:: debugStartup

@@ -18,8 +18,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Useful Tools" href="tools.html" />
-    <link rel="prev" title="Wavefront Controllers" href="wfControllers.html" /> 
+    <link rel="next" title="Useful tools" href="tools.html" />
+    <link rel="prev" title="Generating turbulence" href="turbulence.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -52,30 +52,14 @@
 <li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
 <li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Cameras</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#cameras.Andor_camera"><code class="docutils literal notranslate"><span class="pre">Andor_camera</span></code></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#cameras.blackFly_camera"><code class="docutils literal notranslate"><span class="pre">blackFly_camera</span></code></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.model"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.model</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.binning"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.binning</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.imShm"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.imShm</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.dit"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.dit</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.dark"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.dark</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.nPx"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.nPx</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.get"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.get()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.getDark"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.getDark()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.get_exp"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.get_exp()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.set_exp"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.set_exp()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#cameras.blackFly_camera.shutdown"><code class="docutils literal notranslate"><span class="pre">blackFly_camera.shutdown()</span></code></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful Tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Cameras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Useful scripts:</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick Startup Script</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
 </ul>
 
         </div>
@@ -102,130 +86,16 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-cameras">
-<span id="cameras"></span><h1>Cameras<a class="headerlink" href="#module-cameras" title="Permalink to this heading"></a></h1>
-<dl class="simple">
-<dt>Classes for SEAL cameras:</dt><dd><ul class="simple">
-<li><p>BlackFLy cameras (4)</p></li>
-<li><p>Andor camera (1)</p></li>
-</ul>
-</dd>
-</dl>
-<dl class="py class">
-<dt class="sig sig-object py" id="cameras.Andor_camera">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cameras.</span></span><span class="sig-name descname"><span class="pre">Andor_camera</span></span><a class="headerlink" href="#cameras.Andor_camera" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-</dd></dl>
-
-<dl class="py class">
-<dt class="sig sig-object py" id="cameras.blackFly_camera">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">cameras.</span></span><span class="sig-name descname"><span class="pre">blackFly_camera</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">binning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is a class to communicate with BlackFly cameras</p>
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.model">
-<span class="sig-name descname"><span class="pre">model</span></span><a class="headerlink" href="#cameras.blackFly_camera.model" title="Permalink to this definition"></a></dt>
-<dd><p>choose which camera: PWFS, SHWFS-PSF, ZWFS, or Ben</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>string</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.binning">
-<span class="sig-name descname"><span class="pre">binning</span></span><a class="headerlink" href="#cameras.blackFly_camera.binning" title="Permalink to this definition"></a></dt>
-<dd><p>choose camera binning</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.imShm">
-<span class="sig-name descname"><span class="pre">imShm</span></span><a class="headerlink" href="#cameras.blackFly_camera.imShm" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>ktrc object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.dit">
-<span class="sig-name descname"><span class="pre">dit</span></span><a class="headerlink" href="#cameras.blackFly_camera.dit" title="Permalink to this definition"></a></dt>
-<dd><dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>krtc object</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.dark">
-<span class="sig-name descname"><span class="pre">dark</span></span><a class="headerlink" href="#cameras.blackFly_camera.dark" title="Permalink to this definition"></a></dt>
-<dd><p>dark for the given exposure time. Automatically removed from images.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>array</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py attribute">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.nPx">
-<span class="sig-name descname"><span class="pre">nPx</span></span><a class="headerlink" href="#cameras.blackFly_camera.nPx" title="Permalink to this definition"></a></dt>
-<dd><p>resolution (nPx*nPx)</p>
-<dl class="field-list simple">
-<dt class="field-odd">Type<span class="colon">:</span></dt>
-<dd class="field-odd"><p>int</p>
-</dd>
-</dl>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.get">
-<span class="sig-name descname"><span class="pre">get</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.get" title="Permalink to this definition"></a></dt>
-<dd><p>Get image from camera</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.getDark">
-<span class="sig-name descname"><span class="pre">getDark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.getDark" title="Permalink to this definition"></a></dt>
-<dd><p>Take Dark image</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.get_exp">
-<span class="sig-name descname"><span class="pre">get_exp</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.get_exp" title="Permalink to this definition"></a></dt>
-<dd><p>Get exposure time</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.set_exp">
-<span class="sig-name descname"><span class="pre">set_exp</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expo</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.set_exp" title="Permalink to this definition"></a></dt>
-<dd><p>Set exposure time</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="cameras.blackFly_camera.shutdown">
-<span class="sig-name descname"><span class="pre">shutdown</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.shutdown" title="Permalink to this definition"></a></dt>
-<dd><p>Close connexion with camera</p>
-</dd></dl>
-
-</dd></dl>
-
+  <section id="cameras">
+<h1>Cameras<a class="headerlink" href="#cameras" title="Permalink to this heading"></a></h1>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="wfControllers.html" class="btn btn-neutral float-left" title="Wavefront Controllers" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="tools.html" class="btn btn-neutral float-right" title="Useful Tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="turbulence.html" class="btn btn-neutral float-left" title="Generating turbulence" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tools.html" class="btn btn-neutral float-right" title="Useful tools" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

@@ -5,8 +5,11 @@ libSEAL
    :maxdepth: 4
 
    cameras
+   closeLoopTurbulence
    debugStartup
    quickStartup
    tools
+   turbulence
    wfAffectors
+   wfControllers
    wfSensors
