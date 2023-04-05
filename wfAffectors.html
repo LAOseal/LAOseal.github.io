@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wavefront Affectors &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Wavefront Sensors" href="wfSensors.html" />
+    <link rel="prev" title="Getting started" href="gitInfo.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+</ul>
+<p><span class="caption-text">SEAL Classes:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Wavefront Affectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
+</ul>
+<p><span class="caption-text">Useful scripts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">libSEAL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Wavefront Affectors</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/wfAffectors.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-wfAffectors">
+<span id="wavefront-affectors"></span><h1>Wavefront Affectors<a class="headerlink" href="#module-wfAffectors" title="Permalink to this headline">¶</a></h1>
+<dl class="simple">
+<dt>Classes for all devices that have the capability to affect the wavefront:</dt><dd><ul class="simple">
+<li><p>Deformable mirrors (ALPAO97 and MEMS648)</p></li>
+<li><p>Spatial Light Modulator (Meadowlark)</p></li>
+<li><p>Segemented mirror (IRISAO)</p></li>
+<li><p>Fast steering mirror (PI)</p></li>
+</ul>
+</dd>
+</dl>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<ul class="simple">
+<li><p>Check humidity on MEMS Deformable mirror before starting it (windows machine)</p></li>
+<li><p>Don’t forget to shutdown DMs when work is over</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Pupil footprints on DMs is smaller than clear apertures, leading to somee unseen actuators  (especially for MEMS DM).</p>
+</div>
+<dl class="py class">
+<dt id="wfAffectors.DM_seal">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfAffectors.</span></code><code class="sig-name descname"><span class="pre">DM_seal</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm_model</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">slm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm_param</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use SEAL deformable mirrors. It can either be the MEMS648 or the ALPAO97</p>
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#wfAffectors.DM_seal.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>model of the DM, can be either ‘mems’ or ‘alpao’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.DmChannel">
+<code class="sig-name descname"><span class="pre">DmChannel</span></code><a class="headerlink" href="#wfAffectors.DM_seal.DmChannel" title="Permalink to this definition">¶</a></dt>
+<dd><p>communication with share memory</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>krtc object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.Z2C">
+<code class="sig-name descname"><span class="pre">Z2C</span></code><a class="headerlink" href="#wfAffectors.DM_seal.Z2C" title="Permalink to this definition">¶</a></dt>
+<dd><p>Zernike modes to DM poke matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.Clipping">
+<code class="sig-name descname"><span class="pre">Clipping</span></code><a class="headerlink" href="#wfAffectors.DM_seal.Clipping" title="Permalink to this definition">¶</a></dt>
+<dd><p>prevent to push to much on DM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>float</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.nAct">
+<code class="sig-name descname"><span class="pre">nAct</span></code><a class="headerlink" href="#wfAffectors.DM_seal.nAct" title="Permalink to this definition">¶</a></dt>
+<dd><p>actuators across diameter (actually size of array used - here 32x32 for 28x28 DM)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.valid_actuators_map">
+<code class="sig-name descname"><span class="pre">valid_actuators_map</span></code><a class="headerlink" href="#wfAffectors.DM_seal.valid_actuators_map" title="Permalink to this definition">¶</a></dt>
+<dd><p>map of the valid actuators inside a 32x32 array</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.flat_surf">
+<code class="sig-name descname"><span class="pre">flat_surf</span></code><a class="headerlink" href="#wfAffectors.DM_seal.flat_surf" title="Permalink to this definition">¶</a></dt>
+<dd><p>flat surface - by default every actuators set at 0.5</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.DM_seal.current_surf">
+<code class="sig-name descname"><span class="pre">current_surf</span></code><a class="headerlink" href="#wfAffectors.DM_seal.current_surf" title="Permalink to this definition">¶</a></dt>
+<dd><p>current surface on the DM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.getSurf">
+<code class="sig-name descname"><span class="pre">getSurf</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.getSurf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.mapCmd">
+<code class="sig-name descname"><span class="pre">mapCmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.mapCmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>map command vector to surface command</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.newFlat">
+<code class="sig-name descname"><span class="pre">newFlat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm_map</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.newFlat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Change flat and apply it</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.pokeAct">
+<code class="sig-name descname"><span class="pre">pokeAct</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amplitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.pokeAct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poke actuator: take its position in X and Y</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.pokeAllAct">
+<code class="sig-name descname"><span class="pre">pokeAllAct</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amplitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timestop</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.pokeAllAct" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loop through poking all actuators</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.pokeWaffle">
+<code class="sig-name descname"><span class="pre">pokeWaffle</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amplitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.pokeWaffle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poking Waffle patern - Amplitude in PtV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.pokeWaffleLarge">
+<code class="sig-name descname"><span class="pre">pokeWaffleLarge</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amplitude</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.pokeWaffleLarge" title="Permalink to this definition">¶</a></dt>
+<dd><p>Poking Large Waffle patern - Amplitude in PtV</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.pokeZernike">
+<code class="sig-name descname"><span class="pre">pokeZernike</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">amplitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">zernikeNumber</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">bias</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.pokeZernike" title="Permalink to this definition">¶</a></dt>
+<dd><p>poke ZERNIKE mode : amplitude in PtV in DM units (like KPIC DM)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.setFlatSurf">
+<code class="sig-name descname"><span class="pre">setFlatSurf</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.setFlatSurf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply flat</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.setSurf">
+<code class="sig-name descname"><span class="pre">setSurf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.setSurf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply DM map command</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.showSurf">
+<code class="sig-name descname"><span class="pre">showSurf</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.showSurf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Show DM surface</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.DM_seal.shutdown">
+<code class="sig-name descname"><span class="pre">shutdown</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.DM_seal.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set voltages to 0 and close process</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="wfAffectors.FSM">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfAffectors.</span></code><code class="sig-name descname"><span class="pre">FSM</span></code><a class="headerlink" href="#wfAffectors.FSM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use SEAL fast steering mirror !</p>
+</dd></dl>
+
+<dl class="py class">
+<dt id="wfAffectors.SLM">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfAffectors.</span></code><code class="sig-name descname"><span class="pre">SLM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1116</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tip_offset</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use SEAL meadowlark SLM</p>
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.nPx_x">
+<code class="sig-name descname"><span class="pre">nPx_x</span></code><a class="headerlink" href="#wfAffectors.SLM.nPx_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>SLM height</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.nPx_y">
+<code class="sig-name descname"><span class="pre">nPx_y</span></code><a class="headerlink" href="#wfAffectors.SLM.nPx_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>SLM width</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.nPx">
+<code class="sig-name descname"><span class="pre">nPx</span></code><a class="headerlink" href="#wfAffectors.SLM.nPx" title="Permalink to this definition">¶</a></dt>
+<dd><p>size of the sqaure on which phases are displayed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.center_x">
+<code class="sig-name descname"><span class="pre">center_x</span></code><a class="headerlink" href="#wfAffectors.SLM.center_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>x-position of the phase maps on SLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.center_y">
+<code class="sig-name descname"><span class="pre">center_y</span></code><a class="headerlink" href="#wfAffectors.SLM.center_y" title="Permalink to this definition">¶</a></dt>
+<dd><p>y-position of the phase maps on SLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="wfAffectors.SLM.mask">
+<code class="sig-name descname"><span class="pre">mask</span></code><a class="headerlink" href="#wfAffectors.SLM.mask" title="Permalink to this definition">¶</a></dt>
+<dd><p>amplitude mask on SLM</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.paddingArray">
+<code class="sig-name descname"><span class="pre">paddingArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">array_square</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.paddingArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.phase2bitmap">
+<code class="sig-name descname"><span class="pre">phase2bitmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phase</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.phase2bitmap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.reset">
+<code class="sig-name descname"><span class="pre">reset</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.reset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.setAmplitude">
+<code class="sig-name descname"><span class="pre">setAmplitude</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tip</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">tilt</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.setAmplitude" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.setBitmap">
+<code class="sig-name descname"><span class="pre">setBitmap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">bitmap</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.setBitmap" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.setPhase">
+<code class="sig-name descname"><span class="pre">setPhase</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phase</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.setPhase" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.SLM.setPosition">
+<code class="sig-name descname"><span class="pre">setPosition</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">x</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.SLM.setPosition" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="wfAffectors.segmentedMirror">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfAffectors.</span></code><code class="sig-name descname"><span class="pre">segmentedMirror</span></code><a class="headerlink" href="#wfAffectors.segmentedMirror" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use SEAL IRISAO segmented mirror</p>
+<dl class="py attribute">
+<dt id="wfAffectors.segmentedMirror.socket">
+<code class="sig-name descname"><span class="pre">socket</span></code><a class="headerlink" href="#wfAffectors.segmentedMirror.socket" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>socket object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="simple">
+<dt>connexion with windows machine controlling IRISAO segemented mirror</dt><dd><p>nSegments: int</p>
+</dd>
+</dl>
+<p>number of segments</p>
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.applyMode">
+<code class="sig-name descname"><span class="pre">applyMode</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amplitude</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.applyMode" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.applySegment">
+<code class="sig-name descname"><span class="pre">applySegment</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">segment</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xgrad</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ygrad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.applySegment" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.initMirror">
+<code class="sig-name descname"><span class="pre">initMirror</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.initMirror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.pistonAll">
+<code class="sig-name descname"><span class="pre">pistonAll</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.pistonAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.releaseMirror">
+<code class="sig-name descname"><span class="pre">releaseMirror</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.releaseMirror" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.stopServer">
+<code class="sig-name descname"><span class="pre">stopServer</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.stopServer" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfAffectors.segmentedMirror.zeroAll">
+<code class="sig-name descname"><span class="pre">zeroAll</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfAffectors.segmentedMirror.zeroAll" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="gitInfo.html" class="btn btn-neutral float-left" title="Getting started" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wfSensors.html" class="btn btn-neutral float-right" title="Wavefront Sensors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laboratory for Adaptive Optics - UCSC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

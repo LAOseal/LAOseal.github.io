@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Useful tools &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Performance" href="performance.html" />
+    <link rel="prev" title="Cameras" href="cameras.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+</ul>
+<p><span class="caption-text">SEAL Classes:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Useful tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
+</ul>
+<p><span class="caption-text">Useful scripts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">libSEAL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Useful tools</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/tools.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-tools">
+<span id="useful-tools"></span><h1>Useful tools<a class="headerlink" href="#module-tools" title="Permalink to this headline">¶</a></h1>
+<p>Useful functions for different purposes</p>
+<dl class="py function">
+<dt id="tools.KLBasis">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">KLBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx_pup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_footprint</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.KLBasis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function to define KL basis</p>
+<p>Parameters:
+- N: Number of modes
+- nPx: Resolution in pupil
+- pupil</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.applyQ">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">applyQ</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WWx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">WWy</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.applyQ" title="Permalink to this definition">¶</a></dt>
+<dd><p>Apply the weighted transformation (A^T)(W^T)(W)(A) to 2D matrix p</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.binArray">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">binArray</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">K</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binArray" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.binArray255">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">binArray255</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input_array</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binArray255" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bin array to N x N</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.binIM">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">binIM</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">N</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.binIM" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.build_pokeMatrix">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">build_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nRecPoke</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.build_pokeMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="simple">
+<dt>This fonction allows to register DM actuators w.r.t to reconstructed phase maps</dt><dd><ul class="simple">
+<li><p>Takes push-pull of 2 actuators and fit gaussian to determine position</p></li>
+<li><p>Take waffle image and other pokes images to check results</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.build_poke_matrix_wfs">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">build_poke_matrix_wfs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">xx_wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yy_wfs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.build_poke_matrix_wfs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.error_rms">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">error_rms</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">B</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.error_rms" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.extract_pupil">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">extract_pupil</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pup</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.extract_pupil" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.fft_centre">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">fft_centre</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fft_centre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.fig">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">fig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fig" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.findPWFS_param">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">findPWFS_param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.findPWFS_param" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.findZWFS_param">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">findZWFS_param</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">guess</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[989,</span> <span class="pre">570,</span> <span class="pre">1156,</span> <span class="pre">574,</span> <span class="pre">69]</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dpix</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">50</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.findZWFS_param" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.gauss2d">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">gauss2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.gauss2d" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.ifft_centre">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">ifft_centre</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.ifft_centre" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.makePupil">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">makePupil</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rpx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.makePupil" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.makeRing">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">makeRing</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Rpx_outer</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Rpx_inner</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">set_nans</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.makeRing" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.make_SEAL_aperture">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">make_SEAL_aperture</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Dscaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Gscaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Sscaling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.make_SEAL_aperture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Make IRIS AO aperture using hcipy
+Return:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p>full pupil aperture 2-D array of Shape (2*aperture_r,2*aperture_r)</p></li>
+<li><dl class="simple">
+<dt>segment apertures: 3D array of Shape (37,2*aperture_r,2*aperture_r)</dt><dd><p>where 37 is the number of segments</p>
+</dd>
+</dl>
+</li>
+</ul>
+</div></blockquote>
+<dl class="simple">
+<dt>Note: with current smaller SEAL pupil, best values (from ZWFS images) are:</dt><dd><p>Dscaling=0.96,Gscaling=1.2,Sscaling=1.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.maskFineTuning">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">maskFineTuning</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">PWFS</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.maskFineTuning" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.open_fits">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">open_fits</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="pre">image_path</span></em>, <em class="sig-param"><span class="pre">dtype_option=&lt;class</span> <span class="pre">'float'&gt;</span></em>, <em class="sig-param"><span class="pre">ignore_end_card=False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.open_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open 2-D or 3-D array saved as fits
+Load header information</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.phase_unwrap">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">phase_unwrap</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.phase_unwrap" title="Permalink to this definition">¶</a></dt>
+<dd><p>Unwrap the phase of an image psi given weights weight
+This function uses an algorithm described by Ghiglia and Romero
+and can either be used with or without weight array.
+It is especially suited to recover a unwrapped phase image
+from a (noisy) complex type image, where psi would be
+the angle of the complex values and weight the absolute values
+of the complex image.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.phase_unwrap_ref">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">phase_unwrap_ref</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">psi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">weight</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">kmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.phase_unwrap_ref" title="Permalink to this definition">¶</a></dt>
+<dd><p>A weighed phase unwrap algorithm implemented in pure Python
+author: Tobias A. de Jong
+Based on:
+Ghiglia, Dennis C., and Louis A. Romero.
+“Robust two-dimensional weighted and unweighted phase unwrapping that uses
+fast transforms and iterative methods.” JOSA A 11.1 (1994): 107-117.
+URL: <a class="reference external" href="https://doi.org/10.1364/JOSAA.11.000107">https://doi.org/10.1364/JOSAA.11.000107</a>
+and an existing MATLAB implementation:
+<a class="reference external" href="https://nl.mathworks.com/matlabcentral/fileexchange/60345-2d-weighted-phase-unwrapping">https://nl.mathworks.com/matlabcentral/fileexchange/60345-2d-weighted-phase-unwrapping</a>
+Should maybe use a scipy conjugate descent.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.precomp_Poissonscaling">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">precomp_Poissonscaling</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.precomp_Poissonscaling" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.save_fits">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">save_fits</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">im</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">full_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">header_info</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">{}</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.save_fits" title="Permalink to this definition">¶</a></dt>
+<dd><p>Save 2-D or 3-D array as fits file
+Option: Store information in header</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.solvePoisson">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">solvePoisson</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.solvePoisson" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the poisson equation “P phi = rho” using DCT</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.solvePoisson_precomped">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">solvePoisson_precomped</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">scale</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.solvePoisson_precomped" title="Permalink to this definition">¶</a></dt>
+<dd><p>Solve the poisson equation “P phi = rho” using DCT
+Uses precomputed scaling factors <cite>scale</cite></p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.take_image_pupils">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">take_image_pupils</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.take_image_pupils" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.transformation_dm2wfs">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">transformation_dm2wfs</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alpha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_wfs_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_wfs_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_dm_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_dm_0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">xx_dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">yy_dm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.transformation_dm2wfs" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.zernikeBasis">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">zernikeBasis</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">N</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.zernikeBasis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Define a Zernike Basis using HCIpy function (faster than previous function)</p>
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="cameras.html" class="btn btn-neutral float-left" title="Cameras" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="performance.html" class="btn btn-neutral float-right" title="Performance" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laboratory for Adaptive Optics - UCSC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

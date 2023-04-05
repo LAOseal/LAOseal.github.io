@@ -1,0 +1,7 @@
+Startup - Debug mode
+====================
+
+.. automodule:: debugStartup
+   :members:
+   :undoc-members:
+   :show-inheritance:

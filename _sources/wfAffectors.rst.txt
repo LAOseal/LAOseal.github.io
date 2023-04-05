@@ -1,0 +1,7 @@
+Wavefront Affectors
+===================
+
+.. automodule:: wfAffectors
+   :members:
+   :undoc-members:
+   :show-inheritance:

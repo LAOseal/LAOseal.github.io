@@ -1,0 +1,83 @@
+Getting started
+===============
+
+Before sarting
+______________
+
+Please check the SEAL google doc before statring to use any components.
+
+.. centered:: 
+   `Starting SEAL - documentation (google doc) <https://docs.google.com/document/d/1QJwAxyPVzGfPLH_FckHnJxgLYbsrkni-jAYHNoWxCfI/edit?skip_itp2_check=true#heading=h.9pj3zl3hganr>`_
+
+
+libSEAL path
+____________
+
+libSEAL path on the SEAL machine is located here: **/home/lab/libSEAL**. 
+Import the modules you want by adding this repository to you pythonpath:
+
+.. code-block:: python
+
+    import sys
+    sys.path.append(r"/home/lab/libSEAL")
+
+Using GitHub for libSEAL developpement
+______________________________________
+
+Any developpement on libSEAL should be done under vesion control using *Git*. On SEAL machine, the libSEAL repository is already linked with *Git*. 
+If yo want to clone it to a local repository on your computer, use the following command:
+
+.. code-block:: bash
+
+    git clone https://github.com/LAOseal/libSEAL.git
+
+.. note::
+
+    The libSEAL project on GitHub is private. Please send an e-mail to LAO team to have access granted.
+
+For any modification on libSEAL, please follow the following rule:
+    * If adding new classes/functions, you can work on the master branch
+    * If modifying functions used by other people, create a new branch
+
+Git basic commands:
+
+* Upload latest version of libSEAL (**should be done everytime before starting to work**):
+
+.. code-block:: bash
+
+    git pull
+
+* Adding your modification to the repository:
+
+.. code-block:: bash
+
+    git add --all
+    git commit -m 'your comments'
+    git push
+
+* Create new branch is needed:
+
+.. code-block:: bash
+
+    git branch <new_branch>
+
+* Moving to new branch:
+
+.. code-block:: bash
+
+    git checkout <new_branch>
+
+* Checking on which branch you are:
+
+.. code-block:: bash
+
+    git branch
+
+* Merging branch when job is over:
+
+.. code-block:: bash
+
+    git checkout master
+    git merge <new_branch>
+
+If you want your modifications to be added right away in the documentation, please contact *vchambou@ucsc.edu*.

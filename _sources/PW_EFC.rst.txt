@@ -1,0 +1,7 @@
+PW\_EFC module
+==============
+
+.. automodule:: PW_EFC
+   :members:
+   :undoc-members:
+   :show-inheritance:

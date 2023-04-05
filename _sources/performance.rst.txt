@@ -1,0 +1,7 @@
+Performance
+===========
+
+.. automodule:: performance
+   :members:
+   :undoc-members:
+   :show-inheritance:

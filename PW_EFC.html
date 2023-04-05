@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PW_EFC module &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html">
+            
+              <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p><span class="caption-text">Getting started:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+</ul>
+<p><span class="caption-text">SEAL Classes:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
+<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
+<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
+<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
+<li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
+<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
+</ul>
+<p><span class="caption-text">Useful scripts:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">libSEAL</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">PW_EFC module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/PW_EFC.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-PW_EFC">
+<span id="pw-efc-module"></span><h1>PW_EFC module<a class="headerlink" href="#module-PW_EFC" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="PW_EFC.PW_EFC">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">PW_EFC.</span></code><code class="sig-name descname"><span class="pre">PW_EFC</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">coronagraph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">actuators_list</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>PairWise sensing and EFC control selfect to allow focal plane WFS</p>
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.EM_reconstruction">
+<code class="sig-name descname"><span class="pre">EM_reconstruction</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.EM_reconstruction" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.calibrateEFC">
+<code class="sig-name descname"><span class="pre">calibrateEFC</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.calibrateEFC" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calibration of EFC</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.calibratePW">
+<code class="sig-name descname"><span class="pre">calibratePW</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.calibratePW" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calibration of the Pair-Wise probing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.compute_reconstructor">
+<code class="sig-name descname"><span class="pre">compute_reconstructor</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">singular_thres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.compute_reconstructor" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.getImage">
+<code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.getImage" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get images of Pair-Wise probing</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.img2cmd_map">
+<code class="sig-name descname"><span class="pre">img2cmd_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.img2cmd_map" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="PW_EFC.PW_EFC.mapValidCmd">
+<code class="sig-name descname"><span class="pre">mapValidCmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#PW_EFC.PW_EFC.mapValidCmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map commands vector to map</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Laboratory for Adaptive Optics - UCSC.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

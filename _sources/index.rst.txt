@@ -1,0 +1,47 @@
+.. libSEAL documentation master file, created by
+   sphinx-quickstart on Sun Feb 26 11:07:03 2023.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Welcome to SEAL python library documentation!
+=============================================
+
+.. note::
+   libSEAL is a project is under active development
+
+SEAL is an high-contrast optical testbed located at University California Santa Cruz.
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Getting started:
+
+   infoSEAL
+   gitInfo
+
+.. toctree::
+   :maxdepth: 1
+   :caption: SEAL Classes:
+
+   wfAffectors
+   wfSensors
+   wfControllers
+   turbulence
+   cameras
+   tools
+   performance
+   science
+   calibration
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Useful scripts:
+
+   quickStartup
+   debugStartup
+   closeLoopTurbulence
+
+Indices
+=======
+
+* :ref:`genindex`
+* :ref:`modindex`
