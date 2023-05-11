@@ -108,6 +108,70 @@
 <p class="admonition-title">Note</p>
 <p>More sensors should be added: FAST, modulated PWFS, SHWFS</p>
 </div>
+<dl class="py class">
+<dt id="wfSensors.SHWFS">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">SHWFS</span></code><a class="headerlink" href="#wfSensors.SHWFS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to use the Shack-Hartmann PWFS</p>
+<dl class="py method">
+<dt id="wfSensors.SHWFS.calibrate">
+<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.calibrate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.compute_cmdMat">
+<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.getImage">
+<code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.getImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.getImage_raw">
+<code class="sig-name descname"><span class="pre">getImage_raw</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.getImage_raw" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.getSlopes">
+<code class="sig-name descname"><span class="pre">getSlopes</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.getSlopes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.getSpots">
+<code class="sig-name descname"><span class="pre">getSpots</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.getSpots" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.getWavefront">
+<code class="sig-name descname"><span class="pre">getWavefront</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.getWavefront" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.img2cmd">
+<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full reconstruction of the signal: image to DM commands</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.mapValidCmd">
+<code class="sig-name descname"><span class="pre">mapValidCmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.mapValidCmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Map commands vector to map</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.rm_ptt_wf">
+<code class="sig-name descname"><span class="pre">rm_ptt_wf</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.rm_ptt_wf" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.SHWFS.setRefSlopes">
+<code class="sig-name descname"><span class="pre">setRefSlopes</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.setRefSlopes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 <dl class="py function">
 <dt id="wfSensors.fft_centre">
 <code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">fft_centre</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.fft_centre" title="Permalink to this definition">¶</a></dt>
@@ -269,13 +333,23 @@
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.calibrate">
-<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrate" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrate" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.pyramidWFS.calibrateSimu">
+<code class="sig-name descname"><span class="pre">calibrateSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrateSimu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Synthetic interaction matrix</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.changeMask">
 <code class="sig-name descname"><span class="pre">changeMask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.changeMask" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.pyramidWFS.compute_cmdMat">
+<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -293,7 +367,13 @@
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.getImageSimu">
 <code class="sig-name descname"><span class="pre">getImageSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getImageSimu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Simulation of Pyramid WFS image</p>
+<dd><p>Simulation of Pyramid WFS image - include a modulated case if needed</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.pyramidWFS.getImageSimuMultiLambda">
+<code class="sig-name descname"><span class="pre">getImageSimuMultiLambda</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">lambda_list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getImageSimuMultiLambda" title="Permalink to this definition">¶</a></dt>
+<dd><p>Simulation of BROADBAND Pyramid WFS image - include a modulated case if needed</p>
 </dd></dl>
 
 <dl class="py method">
@@ -303,27 +383,26 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.pyramidWFS.img2cmd_map">
-<code class="sig-name descname"><span class="pre">img2cmd_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd_map" title="Permalink to this definition">¶</a></dt>
+<dt id="wfSensors.pyramidWFS.img2cmd">
+<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full reconstruction of the signal: image to DM commands</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.load_intMat">
-<code class="sig-name descname"><span class="pre">load_intMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_intMat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load true interaction matrix</p>
-</dd></dl>
+<code class="sig-name descname"><span class="pre">load_intMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_intMat" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.load_pokeMatrix">
-<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validActuators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validActuators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
 <dd><p>Load poke matrix computed through calibration process</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.pyramidWFS.mapValidCmd">
-<code class="sig-name descname"><span class="pre">mapValidCmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.mapValidCmd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Map commands vector to map</p>
+<dt id="wfSensors.pyramidWFS.noisePropag">
+<code class="sig-name descname"><span class="pre">noisePropag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sigma_ron</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma_dark</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Nph</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.noisePropag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Noise propagation model in action</p>
 </dd></dl>
 
 <dl class="py method">
@@ -349,6 +428,11 @@ nIter: number of iteration for the reconstructor</p>
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.roi">
 <code class="sig-name descname"><span class="pre">roi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.roi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.pyramidWFS.setModu">
+<code class="sig-name descname"><span class="pre">setModu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">modu</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.setModu" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -526,8 +610,8 @@ nIter: number of iteration for the reconstructor</p>
 <dd></dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.zernikeWFS.img2cmd_map">
-<code class="sig-name descname"><span class="pre">img2cmd_map</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.img2cmd_map" title="Permalink to this definition">¶</a></dt>
+<dt id="wfSensors.zernikeWFS.img2cmd">
+<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
 <dd><p>Full reconstruction of the signal: image to DM commands</p>
 </dd></dl>
 

@@ -169,12 +169,16 @@
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.calibrate">calibrate() (wfSensors.pyramidWFS method)</a>
 
       <ul>
+        <li><a href="wfSensors.html#wfSensors.SHWFS.calibrate">(wfSensors.SHWFS method)</a>
+</li>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.calibrate">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
       <li><a href="PW_EFC.html#PW_EFC.PW_EFC.calibrateEFC">calibrateEFC() (PW_EFC.PW_EFC method)</a>
 </li>
       <li><a href="PW_EFC.html#PW_EFC.PW_EFC.calibratePW">calibratePW() (PW_EFC.PW_EFC method)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.calibrateSimu">calibrateSimu() (wfSensors.pyramidWFS method)</a>
 </li>
       <li>
     calibration
@@ -213,6 +217,12 @@
 
       <ul>
         <li><a href="closeLoopTurbulence.html#module-closeLoopTurbulence">module</a>
+</li>
+      </ul></li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.compute_cmdMat">compute_cmdMat() (wfSensors.pyramidWFS method)</a>
+
+      <ul>
+        <li><a href="wfSensors.html#wfSensors.SHWFS.compute_cmdMat">(wfSensors.SHWFS method)</a>
 </li>
       </ul></li>
       <li><a href="PW_EFC.html#PW_EFC.PW_EFC.compute_reconstructor">compute_reconstructor() (PW_EFC.PW_EFC method)</a>
@@ -323,9 +333,13 @@
 </li>
         <li><a href="wfSensors.html#wfSensors.pyramidWFS.getImage">(wfSensors.pyramidWFS method)</a>
 </li>
+        <li><a href="wfSensors.html#wfSensors.SHWFS.getImage">(wfSensors.SHWFS method)</a>
+</li>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.getImage">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.getImage_raw">getImage_raw() (wfSensors.SHWFS method)</a>
+</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="science.html#science.coronagraph.getImageSimu">getImageSimu() (science.coronagraph method)</a>
@@ -336,6 +350,8 @@
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.getImageSimu">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.getImageSimuMultiLambda">getImageSimuMultiLambda() (wfSensors.pyramidWFS method)</a>
+</li>
       <li><a href="science.html#science.coronagraph.getPSF">getPSF() (science.coronagraph method)</a>
 
       <ul>
@@ -344,7 +360,13 @@
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.getPSF">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.getSlopes">getSlopes() (wfSensors.SHWFS method)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.getSpots">getSpots() (wfSensors.SHWFS method)</a>
+</li>
       <li><a href="wfAffectors.html#wfAffectors.DM_seal.getSurf">getSurf() (wfAffectors.DM_seal method)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.getWavefront">getWavefront() (wfSensors.SHWFS method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -358,16 +380,18 @@
         <li><a href="wfSensors.html#wfSensors.ifft_centre">(in module wfSensors)</a>
 </li>
       </ul></li>
-      <li><a href="PW_EFC.html#PW_EFC.PW_EFC.img2cmd_map">img2cmd_map() (PW_EFC.PW_EFC method)</a>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.img2cmd">img2cmd() (wfSensors.pyramidWFS method)</a>
 
       <ul>
-        <li><a href="wfSensors.html#wfSensors.pyramidWFS.img2cmd_map">(wfSensors.pyramidWFS method)</a>
+        <li><a href="wfSensors.html#wfSensors.SHWFS.img2cmd">(wfSensors.SHWFS method)</a>
 </li>
-        <li><a href="wfSensors.html#wfSensors.zernikeWFS.img2cmd_map">(wfSensors.zernikeWFS method)</a>
+        <li><a href="wfSensors.html#wfSensors.zernikeWFS.img2cmd">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="PW_EFC.html#PW_EFC.PW_EFC.img2cmd_map">img2cmd_map() (PW_EFC.PW_EFC method)</a>
+</li>
       <li><a href="cameras.html#cameras.blackFly_camera.imShm">imShm (cameras.blackFly_camera attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.segmentedMirror.initMirror">initMirror() (wfAffectors.segmentedMirror method)</a>
@@ -425,7 +449,7 @@
       <li><a href="PW_EFC.html#PW_EFC.PW_EFC.mapValidCmd">mapValidCmd() (PW_EFC.PW_EFC method)</a>
 
       <ul>
-        <li><a href="wfSensors.html#wfSensors.pyramidWFS.mapValidCmd">(wfSensors.pyramidWFS method)</a>
+        <li><a href="wfSensors.html#wfSensors.SHWFS.mapValidCmd">(wfSensors.SHWFS method)</a>
 </li>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.mapValidCmd">(wfSensors.zernikeWFS method)</a>
 </li>
@@ -506,6 +530,8 @@
 </li>
       </ul></li>
       <li><a href="wfControllers.html#wfControllers.integrator.nModes">nModes (wfControllers.integrator attribute)</a>
+</li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.noisePropag">noisePropag() (wfSensors.pyramidWFS method)</a>
 </li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.nonLinRec">nonLinRec (wfSensors.pyramidWFS attribute)</a>
 
@@ -672,6 +698,8 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.reset">reset() (wfAffectors.SLM method)</a>
 </li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.rm_ptt_wf">rm_ptt_wf() (wfSensors.SHWFS method)</a>
+</li>
       <li><a href="science.html#science.coronagraph.roi">roi() (science.coronagraph method)</a>
 
       <ul>
@@ -705,14 +733,18 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM_seal.setFlatSurf">setFlatSurf() (wfAffectors.DM_seal method)</a>
 </li>
+      <li><a href="wfSensors.html#wfSensors.pyramidWFS.setModu">setModu() (wfSensors.pyramidWFS method)</a>
+</li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.setPhase">setPhase() (wfAffectors.SLM method)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.SLM.setPosition">setPosition() (wfAffectors.SLM method)</a>
 </li>
-      <li><a href="wfAffectors.html#wfAffectors.DM_seal.setSurf">setSurf() (wfAffectors.DM_seal method)</a>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.setRefSlopes">setRefSlopes() (wfSensors.SHWFS method)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="wfAffectors.html#wfAffectors.DM_seal.setSurf">setSurf() (wfAffectors.DM_seal method)</a>
+</li>
       <li><a href="turbulence.html#turbulence.atm.setTurbu">setTurbu() (turbulence.atm method)</a>
 </li>
       <li><a href="wfControllers.html#wfControllers.integrator.showDisplay">showDisplay() (wfControllers.integrator method)</a>
@@ -725,6 +757,8 @@
         <li><a href="wfAffectors.html#wfAffectors.DM_seal.shutdown">(wfAffectors.DM_seal method)</a>
 </li>
       </ul></li>
+      <li><a href="wfSensors.html#wfSensors.SHWFS">SHWFS (class in wfSensors)</a>
+</li>
       <li><a href="wfAffectors.html#wfAffectors.SLM">SLM (class in wfAffectors)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.segmentedMirror.socket">socket (wfAffectors.segmentedMirror attribute)</a>
