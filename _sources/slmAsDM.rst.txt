@@ -18,7 +18,7 @@ Then you can define your DM based on the SLM by running:
 
     nAct_across = 5
     c = 0.5
-    dm_slm = DM_seal('slm',slm,[nAct_across,c]
+    dm_slm = DM_seal('slm',slm,[nAct_across,c])
     
 where nAct_across is the number of actuator across the pupil, and c is the actuators coupling factor.
 
