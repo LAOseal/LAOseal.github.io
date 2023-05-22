@@ -5,7 +5,7 @@ If you just want to close loop on statics and have access to DM objects to perfo
 
 .. code-block:: python
 
-    run /home/lab/libSEAL/quickStartup.python
+    run /home/lab/libSEAL/quickStartup.py
 
 If you choose to close loop on both DMs (ALPAO and MEMS), you can then control them in the iPython terminal. 
 The ALPAO DM object is saved in the variable:

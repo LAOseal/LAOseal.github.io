@@ -1,5 +1,5 @@
-In more detail
-==============
+In more details
+===============
 
 Here is an example to close the loop on the bench by yourself, not using the quickStartup script.
 
