@@ -1,0 +1,25 @@
+Basic startup
+=============
+
+If you just want to close loop on statics and have access to DM objects to perform tests around falt wavefront, open iPython terminal and launch:
+
+.. code-block:: python
+
+    run /home/lab/libSEAL/quickStartup.python
+
+If you choose to close loop on both DMs (ALPAO and MEMS), you can then control them in the iPython terminal. 
+The ALPAO DM object is saved in the variable:
+
+.. code-block:: python
+
+    dm_alpao
+
+The MEMS DM object is saved in the variable:
+
+.. code-block:: python
+
+    dm_mems
+
+.. note::
+
+    ALPAO DM shape tends to move in open loop, usually low aberrations are created in few minutes if loop stay open. You can close the loop again by launching: controller.closeLoop(10)

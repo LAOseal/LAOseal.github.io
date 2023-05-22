@@ -20,6 +20,13 @@ SEAL is an high-contrast optical testbed located at University California Santa 
 
 .. toctree::
    :maxdepth: 1
+   :caption: TUTORIALS:
+
+   basicStartup
+   detailTuto
+
+.. toctree::
+   :maxdepth: 1
    :caption: SEAL Classes:
 
    wfAffectors
@@ -30,7 +37,6 @@ SEAL is an high-contrast optical testbed located at University California Santa 
    tools
    performance
    science
-   calibration
 
 .. toctree::
    :maxdepth: 2

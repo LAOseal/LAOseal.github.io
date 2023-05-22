@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to SEAL python library documentation! &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>In more detail &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -16,7 +16,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Information about SEAL" href="infoSEAL.html" /> 
+    <link rel="next" title="Wavefront Affectors" href="wfAffectors.html" />
+    <link rel="prev" title="Basic startup" href="basicStartup.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,7 +28,7 @@
 
           
           
-          <a href="#">
+          <a href="index.html">
             
               <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
           </a>
@@ -45,9 +46,9 @@
 <li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
 </ul>
 <p><span class="caption-text">TUTORIALS:</span></p>
-<ul>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more detail</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">In more detail</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul>
@@ -73,17 +74,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">libSEAL</a>
+          <a href="index.html">libSEAL</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to SEAL python library documentation!</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">In more detail</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/detailTuto.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -91,62 +92,50 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-seal-python-library-documentation">
-<h1>Welcome to SEAL python library documentation!<a class="headerlink" href="#welcome-to-seal-python-library-documentation" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>libSEAL is a project is under active development</p>
+  <section id="in-more-detail">
+<h1>In more detail<a class="headerlink" href="#in-more-detail" title="Permalink to this headline">¶</a></h1>
+<p>Here is an example to close the loop on the bench by yourself, not using the quickStartup script.</p>
+<p>First, import all the library modules:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="sa">r</span><span class="s2">&quot;/home/lab/libSEAL&quot;</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">wfAffectors</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">wfSensors</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">wfControllers</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">cameras</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">turbulence</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">tools</span> <span class="kn">import</span> <span class="o">*</span>
+</pre></div>
 </div>
-<p>SEAL is an high-contrast optical testbed located at University California Santa Cruz.</p>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">Getting started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
-</ul>
+<p>Create the DM object, in this example we will use the ALPAO DM.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm_alpao</span> <span class="o">=</span> <span class="n">DM_seal</span><span class="p">(</span><span class="s1">&#39;alpao&#39;</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">TUTORIALS:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more detail</a></li>
-</ul>
+<p>Create the WFS object, in this example we will use the SHWFS.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don’t use SHWFS and MEMS DM together, as the SHWFS doesn’t have enough subapertures to handle this DM.</p>
 </div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">SEAL Classes:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SH</span> <span class="o">=</span> <span class="n">SHWFS</span><span class="p">()</span>
+</pre></div>
 </div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">Useful scripts:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
-</ul>
+<p>Then, you can launch the ALPAO DM / SHWFS calibration:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">SH</span><span class="o">.</span><span class="n">calibrate</span><span class="p">(</span><span class="n">dm_alpao</span><span class="p">)</span>
+</pre></div>
 </div>
-</section>
-<section id="indices">
-<h1>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-</ul>
+<p>Creating a controller object and closing the loop:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">controller</span> <span class="o">=</span> <span class="n">integrator</span><span class="p">(</span><span class="n">SH</span><span class="p">,</span><span class="n">dm_alpao</span><span class="p">)</span>
+<span class="n">controller</span><span class="o">.</span><span class="n">loopgain</span> <span class="o">=</span> <span class="mf">0.3</span>
+<span class="n">controller</span><span class="o">.</span><span class="n">closeLoop</span><span class="p">(</span><span class="mi">30</span><span class="p">)</span>
+</pre></div>
+</div>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="infoSEAL.html" class="btn btn-neutral float-right" title="Information about SEAL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="basicStartup.html" class="btn btn-neutral float-left" title="Basic startup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="wfAffectors.html" class="btn btn-neutral float-right" title="Wavefront Affectors" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

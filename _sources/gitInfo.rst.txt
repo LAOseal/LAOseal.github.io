@@ -1,8 +1,8 @@
-Getting started
+Before starting
 ===============
 
-Before sarting
-______________
+Before all !
+____________
 
 Please check the SEAL google doc before statring to use any components.
 

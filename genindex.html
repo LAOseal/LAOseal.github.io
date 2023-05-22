@@ -40,7 +40,12 @@
               <p><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
+</ul>
+<p><span class="caption-text">TUTORIALS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more detail</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul>
@@ -52,7 +57,6 @@
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -164,8 +168,6 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfControllers.html#wfControllers.integrator.C">C (wfControllers.integrator attribute)</a>
 </li>
-      <li><a href="calibration.html#calibration.calib">calib (class in calibration)</a>
-</li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.calibrate">calibrate() (wfSensors.pyramidWFS method)</a>
 
       <ul>
@@ -180,13 +182,6 @@
 </li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.calibrateSimu">calibrateSimu() (wfSensors.pyramidWFS method)</a>
 </li>
-      <li>
-    calibration
-
-      <ul>
-        <li><a href="calibration.html#module-calibration">module</a>
-</li>
-      </ul></li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.cam">cam (wfSensors.pyramidWFS attribute)</a>
 
       <ul>
@@ -200,10 +195,10 @@
         <li><a href="cameras.html#module-cameras">module</a>
 </li>
       </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.SLM.center_x">center_x (wfAffectors.SLM attribute)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="wfAffectors.html#wfAffectors.SLM.center_y">center_y (wfAffectors.SLM attribute)</a>
 </li>
       <li><a href="wfSensors.html#wfSensors.pyramidWFS.changeMask">changeMask() (wfSensors.pyramidWFS method)</a>
@@ -293,17 +288,13 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#tools.fft_centre">fft_centre() (in module tools)</a>
-
-      <ul>
-        <li><a href="wfSensors.html#wfSensors.fft_centre">(in module wfSensors)</a>
 </li>
-      </ul></li>
       <li><a href="tools.html#tools.fig">fig() (in module tools)</a>
+</li>
+      <li><a href="tools.html#tools.findPWFS_param">findPWFS_param() (in module tools)</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="tools.html#tools.findPWFS_param">findPWFS_param() (in module tools)</a>
-</li>
       <li><a href="tools.html#tools.findZWFS_param">findZWFS_param() (in module tools)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM_seal.flat_surf">flat_surf (wfAffectors.DM_seal attribute)</a>
@@ -375,14 +366,12 @@
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="tools.html#tools.ifft_centre">ifft_centre() (in module tools)</a>
-
-      <ul>
-        <li><a href="wfSensors.html#wfSensors.ifft_centre">(in module wfSensors)</a>
 </li>
-      </ul></li>
-      <li><a href="wfSensors.html#wfSensors.pyramidWFS.img2cmd">img2cmd() (wfSensors.pyramidWFS method)</a>
+      <li><a href="PW_EFC.html#PW_EFC.PW_EFC.img2cmd">img2cmd() (PW_EFC.PW_EFC method)</a>
 
       <ul>
+        <li><a href="wfSensors.html#wfSensors.pyramidWFS.img2cmd">(wfSensors.pyramidWFS method)</a>
+</li>
         <li><a href="wfSensors.html#wfSensors.SHWFS.img2cmd">(wfSensors.SHWFS method)</a>
 </li>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.img2cmd">(wfSensors.zernikeWFS method)</a>
@@ -390,15 +379,11 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="PW_EFC.html#PW_EFC.PW_EFC.img2cmd_map">img2cmd_map() (PW_EFC.PW_EFC method)</a>
-</li>
       <li><a href="cameras.html#cameras.blackFly_camera.imShm">imShm (cameras.blackFly_camera attribute)</a>
 </li>
       <li><a href="wfAffectors.html#wfAffectors.segmentedMirror.initMirror">initMirror() (wfAffectors.segmentedMirror method)</a>
 </li>
       <li><a href="wfControllers.html#wfControllers.integrator">integrator (class in wfControllers)</a>
-</li>
-      <li><a href="calibration.html#calibration.calib.interactionMatrix">interactionMatrix() (calibration.calib method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -446,11 +431,9 @@
 </li>
       <li><a href="wfAffectors.html#wfAffectors.DM_seal.mapCmd">mapCmd() (wfAffectors.DM_seal method)</a>
 </li>
-      <li><a href="PW_EFC.html#PW_EFC.PW_EFC.mapValidCmd">mapValidCmd() (PW_EFC.PW_EFC method)</a>
+      <li><a href="wfSensors.html#wfSensors.SHWFS.mapValidCmd">mapValidCmd() (wfSensors.SHWFS method)</a>
 
       <ul>
-        <li><a href="wfSensors.html#wfSensors.SHWFS.mapValidCmd">(wfSensors.SHWFS method)</a>
-</li>
         <li><a href="wfSensors.html#wfSensors.zernikeWFS.mapValidCmd">(wfSensors.zernikeWFS method)</a>
 </li>
       </ul></li>
@@ -486,8 +469,6 @@
     module
 
       <ul>
-        <li><a href="calibration.html#module-calibration">calibration</a>
-</li>
         <li><a href="cameras.html#module-cameras">cameras</a>
 </li>
         <li><a href="closeLoopTurbulence.html#module-closeLoopTurbulence">closeLoopTurbulence</a>

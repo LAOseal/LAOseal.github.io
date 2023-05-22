@@ -1,0 +1,49 @@
+In more detail
+==============
+
+Here is an example to close the loop on the bench by yourself, not using the quickStartup script.
+
+First, import all the library modules:
+
+.. code-block:: python
+
+    import sys
+    sys.path.append(r"/home/lab/libSEAL")
+    from wfAffectors import *
+    from wfSensors import *
+    from wfControllers import *
+    from cameras import *
+    from turbulence import *
+    from tools import *
+
+
+Create the DM object, in this example we will use the ALPAO DM.
+
+.. code-block:: python
+
+    dm_alpao = DM_seal('alpao')
+
+Create the WFS object, in this example we will use the SHWFS.
+
+.. warning::
+
+    Don't use SHWFS and MEMS DM together, as the SHWFS doesn't have enough subapertures to handle this DM.
+
+
+.. code-block:: python
+
+    SH = SHWFS()
+
+Then, you can launch the ALPAO DM / SHWFS calibration:
+
+.. code-block:: python
+
+    SH.calibrate(dm_alpao)
+
+Creating a controller object and closing the loop:
+
+.. code-block:: python
+
+    controller = integrator(SH,dm_alpao)
+    controller.loopgain = 0.3
+    controller.closeLoop(30)

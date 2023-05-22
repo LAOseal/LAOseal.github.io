@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Welcome to SEAL python library documentation! &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>Basic startup &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -16,7 +16,8 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Information about SEAL" href="infoSEAL.html" /> 
+    <link rel="next" title="In more detail" href="detailTuto.html" />
+    <link rel="prev" title="Before starting" href="gitInfo.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -27,7 +28,7 @@
 
           
           
-          <a href="#">
+          <a href="index.html">
             
               <img src="_static/SEAL_logo.png" class="logo" alt="Logo"/>
           </a>
@@ -45,8 +46,8 @@
 <li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
 </ul>
 <p><span class="caption-text">TUTORIALS:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Basic startup</a></li>
 <li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more detail</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
@@ -73,17 +74,17 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="#">libSEAL</a>
+          <a href="index.html">libSEAL</a>
       </nav>
 
       <div class="wy-nav-content">
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Welcome to SEAL python library documentation!</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Basic startup</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/index.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/basicStartup.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -91,62 +92,33 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="welcome-to-seal-python-library-documentation">
-<h1>Welcome to SEAL python library documentation!<a class="headerlink" href="#welcome-to-seal-python-library-documentation" title="Permalink to this headline">¶</a></h1>
+  <section id="basic-startup">
+<h1>Basic startup<a class="headerlink" href="#basic-startup" title="Permalink to this headline">¶</a></h1>
+<p>If you just want to close loop on statics and have access to DM objects to perform tests around falt wavefront, open iPython terminal and launch:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">lab</span><span class="o">/</span><span class="n">libSEAL</span><span class="o">/</span><span class="n">quickStartup</span><span class="o">.</span><span class="n">python</span>
+</pre></div>
+</div>
+<p>If you choose to close loop on both DMs (ALPAO and MEMS), you can then control them in the iPython terminal.
+The ALPAO DM object is saved in the variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm_alpao</span>
+</pre></div>
+</div>
+<p>The MEMS DM object is saved in the variable:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">dm_mems</span>
+</pre></div>
+</div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>libSEAL is a project is under active development</p>
+<p>ALPAO DM shape tends to move in open loop, usually low aberrations are created in few minutes if loop stay open. You can close the loop again by launching: controller.closeLoop(10)</p>
 </div>
-<p>SEAL is an high-contrast optical testbed located at University California Santa Cruz.</p>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">Getting started:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">TUTORIALS:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more detail</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">SEAL Classes:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="wfAffectors.html">Wavefront Affectors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfSensors.html">Wavefront Sensors</a></li>
-<li class="toctree-l1"><a class="reference internal" href="wfControllers.html">Wavefront Controllers</a></li>
-<li class="toctree-l1"><a class="reference internal" href="turbulence.html">Generating turbulence</a></li>
-<li class="toctree-l1"><a class="reference internal" href="cameras.html">Cameras</a></li>
-<li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
-<li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
-<li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-</ul>
-</div>
-<div class="toctree-wrapper compound">
-<p><span class="caption-text">Useful scripts:</span></p>
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
-<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
-<li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
-</ul>
-</div>
-</section>
-<section id="indices">
-<h1>Indices<a class="headerlink" href="#indices" title="Permalink to this headline">¶</a></h1>
-<ul class="simple">
-<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Index</span></a></p></li>
-<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Module Index</span></a></p></li>
-</ul>
 </section>
 
 
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="infoSEAL.html" class="btn btn-neutral float-right" title="Information about SEAL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="gitInfo.html" class="btn btn-neutral float-left" title="Before starting" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="detailTuto.html" class="btn btn-neutral float-right" title="In more detail" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

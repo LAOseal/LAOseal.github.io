@@ -92,21 +92,22 @@
 <span id="wavefront-sensors"></span><h1>Wavefront Sensors<a class="headerlink" href="#module-wfSensors" title="Permalink to this headline">¶</a></h1>
 <dl class="simple">
 <dt>Classes for wavefront sensors:</dt><dd><ul class="simple">
-<li><p>non-modulated 4-sided Pyramid WFS</p></li>
+<li><p>4-sided Pyramid WFS</p></li>
 <li><p>Zernike WFS</p></li>
+<li><p>Shhack-Hartmann WFS</p></li>
 </ul>
 </dd>
 </dl>
 <dl class="simple">
 <dt>You can add any new object, but you will need to have this 2 methods in your class:</dt><dd><ul class="simple">
-<li><p>wfs.getImage() : record WFS image</p></li>
-<li><p>wfs.img2cmd_map(img) : reconstruct command to send to DM from image</p></li>
+<li><p>wfs.getImage() : record WFS signal (can be already processed)</p></li>
+<li><p>wfs.img2cmd(img) : reconstruct command (as vector) to send to DM from measurement</p></li>
 </ul>
 </dd>
 </dl>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>More sensors should be added: FAST, modulated PWFS, SHWFS</p>
+<p>More sensors should be added: FAST, focal plane WFS (EFC)</p>
 </div>
 <dl class="py class">
 <dt id="wfSensors.SHWFS">
@@ -171,16 +172,6 @@
 <dd></dd></dl>
 
 </dd></dl>
-
-<dl class="py function">
-<dt id="wfSensors.fft_centre">
-<code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">fft_centre</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.fft_centre" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py function">
-<dt id="wfSensors.ifft_centre">
-<code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">ifft_centre</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">X</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.ifft_centre" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
 
 <dl class="py class">
 <dt id="wfSensors.pyramidWFS">
@@ -333,13 +324,27 @@
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.calibrate">
-<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push-pull calibration for the given DM. It can be zonal or modal (only Zernike modes for now).</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>dm (DM_seal object): DM for used for calibration
+modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=1) - or not (=0)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.calibrateSimu">
-<code class="sig-name descname"><span class="pre">calibrateSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrateSimu" title="Permalink to this definition">¶</a></dt>
-<dd><p>Synthetic interaction matrix</p>
+<code class="sig-name descname"><span class="pre">calibrateSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrateSimu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute synthetic interaction matrix.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>mode2phase (np.array): mode to calibrate. By default, it is the pokeMatrix that was loaded.</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -349,8 +354,15 @@
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.compute_cmdMat">
-<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute pseudo inverse of the interaction matrix.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>threshold (float - optional): conditionning for pseudo-inverse computation.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.cropImg">
@@ -379,24 +391,42 @@
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.getPSF">
 <code class="sig-name descname"><span class="pre">getPSF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.getPSF" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get PSF from estmated phase</p>
+<dd><p>Get PSF from estimated phase</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.img2cmd">
 <code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Full reconstruction of the signal: image to DM commands</p>
+<dd><p>Full reconstruction of the signal: image to DM commands.</p>
 </dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.load_intMat">
-<code class="sig-name descname"><span class="pre">load_intMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_intMat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<code class="sig-name descname"><span class="pre">load_intMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_intMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load true interaction matrix already computed before.
+Precise if it is a modal or a zonal matrix (zonal by default).</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>intMat (np.array): Interaction Matrix to be loaded
+dm (DM_seal object): DM associated with this interaction matrix
+modal (bool): if it is modal or not (=0 by default)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.load_pokeMatrix">
-<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validActuators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load poke matrix computed through calibration process</p>
+<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a poke matrix computed through calibration process, and compute its pseudo-inverse.
+It is useful to project reconstructed phase onto DM actuators.(This poke matrix is therefore associated with a diven dm.)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>pokeMatrix (np.array): poke phase in WFS space
+calib (bool): launching or not the synthetic calibration</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
