@@ -1,0 +1,42 @@
+Applyting turbulence on SLM
+===========================
+
+You can use the SLM to generate turbulence.
+
+.. note::
+
+    SLM can be used as a DM and to create turbulence simultaneously, it will create the different phasemap on different channel. Check SLM object for more details.
+    
+
+First, create SLM object.
+
+.. code-block:: python
+
+    slm = SLM()
+
+Define turbulence parameters.
+
+.. code-block:: python
+
+    telescope_diameter = 1.5
+    wavelength = 635*1e-09
+    fried_parameter = 0.1
+    velocity = 5
+    outer_scale = 40
+    timeSampling = 0.001
+    
+Then you can create the atmosphere object, and put the SLM object in these arguments.
+
+.. code-block:: python
+
+    turbu = atm(telescope_diameter,wavelength,fried_parameter,velocity,outer_scale,timeSampling,slm)
+    
+You can then apply turubulence by running:
+
+
+.. code-block:: python
+
+    time = 1
+    turbu.setTurbu(time)
+    
+where time is the time for which you display turbulence (in seconds).

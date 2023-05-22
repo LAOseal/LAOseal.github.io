@@ -24,6 +24,8 @@ SEAL is an high-contrast optical testbed located at University California Santa 
 
    basicStartup
    detailTuto
+   slmAsDM
+   turbuOnSLM
 
 .. toctree::
    :maxdepth: 1

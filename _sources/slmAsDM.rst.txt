@@ -1,0 +1,30 @@
+Using SLM as a DM
+=================
+
+You can use the SLM as if it where a DM. To do so, first create a SLM object:
+
+.. code-block:: python
+
+    slm = SLM()
+    
+.. warning ::
+	
+    Don't forget to start the SLM server on the windows machine, please refer to SEAL google doc to do so.
+    
+
+Then you can define your DM based on the SLM by running:
+
+.. code-block:: python
+
+    nAct_across = 5
+    c = 0.5
+    dm_slm = DM_seal('slm',slm,[nAct_across,c]
+    
+where nAct_across is the number of actuator across the pupil, and c is the actuators coupling factor.
+
+.. note ::
+	
+    For time constrain issues, no matter what value nAct_across is, only 100 Zernike modes will be controlled by the DM. If it is an issue, please contact moderator.
+    
+Then the SLM can be controlled as a DM.
+    
