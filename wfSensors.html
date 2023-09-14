@@ -43,7 +43,14 @@
               <p><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
+</ul>
+<p><span class="caption-text">TUTORIALS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slmAsDM.html">Using SLM as a DM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbuOnSLM.html">Applyting turbulence on SLM</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
@@ -55,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -94,7 +100,8 @@
 <dt>Classes for wavefront sensors:</dt><dd><ul class="simple">
 <li><p>4-sided Pyramid WFS</p></li>
 <li><p>Zernike WFS</p></li>
-<li><p>Shhack-Hartmann WFS</p></li>
+<li><p>Shack-Hartmann WFS</p></li>
+<li><p>Photonic Lantern WFS</p></li>
 </ul>
 </dd>
 </dl>
@@ -110,19 +117,48 @@
 <p>More sensors should be added: FAST, focal plane WFS (EFC)</p>
 </div>
 <dl class="py class">
+<dt id="wfSensors.PhotonicLantern">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">PhotonicLantern</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cam</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">reader</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.PhotonicLantern" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#wfSensors.WavefrontSensor" title="wfSensors.WavefrontSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">wfSensors.WavefrontSensor</span></code></a></p>
+<p>A photonic lantern wavefront sensor. Note: till I decide what to do with this,
+it’ll have an external dependency on /home/lab/asengupta/photonics via “reader”.</p>
+<dl class="py method">
+<dt id="wfSensors.PhotonicLantern.getImage">
+<code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.PhotonicLantern.getImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.PhotonicLantern.img2cmd">
+<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.PhotonicLantern.img2cmd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="wfSensors.SHWFS">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">SHWFS</span></code><a class="headerlink" href="#wfSensors.SHWFS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#wfSensors.WavefrontSensor" title="wfSensors.WavefrontSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">wfSensors.WavefrontSensor</span></code></a></p>
 <p>This is a class to use the Shack-Hartmann PWFS</p>
 <dl class="py method">
 <dt id="wfSensors.SHWFS.calibrate">
 <code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.calibrate" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Push-pull calibration for the given DM. It can be zonal or modal (only Zernike modes for now).</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>dm (DM_seal object): DM for used for calibration
+modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=1) - or not (=0)</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.SHWFS.compute_cmdMat">
 <code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.SHWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
+<dd><p>Compute pseudo inverse of the interaction matrix.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>threshold (float - optional): conditionning for pseudo-inverse computation.</p>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.SHWFS.getImage">
@@ -174,9 +210,53 @@
 </dd></dl>
 
 <dl class="py class">
+<dt id="wfSensors.WavefrontSensor">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">WavefrontSensor</span></code><a class="headerlink" href="#wfSensors.WavefrontSensor" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Abstract base class for wavefront sensors;
+makes sure that any WFS implements the essential methods
+and defines common functionality for any WFS.</p>
+<dl class="py method">
+<dt id="wfSensors.WavefrontSensor.calibrate">
+<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.WavefrontSensor.calibrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push-pull calibration for the given DM. It can be zonal or modal (only Zernike modes for now).</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>dm (DM_seal object): DM for used for calibration
+modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=1) - or not (=0)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.WavefrontSensor.compute_cmdMat">
+<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.WavefrontSensor.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute pseudo inverse of the interaction matrix.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>threshold (float - optional): conditionning for pseudo-inverse computation.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.WavefrontSensor.getImage">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.WavefrontSensor.getImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.WavefrontSensor.img2cmd">
+<em class="property"><span class="pre">abstract</span> </em><code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.WavefrontSensor.img2cmd" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
 <dt id="wfSensors.pyramidWFS">
 <em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">pyramidWFS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil_tel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pup</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <a class="reference internal" href="#wfSensors.WavefrontSensor" title="wfSensors.WavefrontSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">wfSensors.WavefrontSensor</span></code></a></p>
 <p>This is a class to use the 4-sided PWFS</p>
 <dl class="py attribute">
 <dt id="wfSensors.pyramidWFS.pupil_tel">
@@ -323,19 +403,6 @@
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.pyramidWFS.calibrate">
-<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Push-pull calibration for the given DM. It can be zonal or modal (only Zernike modes for now).</p>
-<blockquote>
-<div><dl class="simple">
-<dt>Parameters:</dt><dd><p>dm (DM_seal object): DM for used for calibration
-modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=1) - or not (=0)</p>
-</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
-
-<dl class="py method">
 <dt id="wfSensors.pyramidWFS.calibrateSimu">
 <code class="sig-name descname"><span class="pre">calibrateSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.calibrateSimu" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute synthetic interaction matrix.</p>
@@ -351,18 +418,6 @@ modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=
 <dt id="wfSensors.pyramidWFS.changeMask">
 <code class="sig-name descname"><span class="pre">changeMask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mask_new</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.changeMask" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt id="wfSensors.pyramidWFS.compute_cmdMat">
-<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
-<dd><p>Compute pseudo inverse of the interaction matrix.</p>
-<blockquote>
-<div><dl class="simple">
-<dt>Parameters:</dt><dd><p>threshold (float - optional): conditionning for pseudo-inverse computation.</p>
-</dd>
-</dl>
-</div></blockquote>
-</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.cropImg">
@@ -396,8 +451,8 @@ modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.img2cmd">
-<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Full reconstruction of the signal: image to DM commands.</p>
+<code class="sig-name descname"><span class="pre">img2cmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.img2cmd" title="Permalink to this definition">¶</a></dt>
+<dd><p>Full reconstruction of the signal: image to DM commands</p>
 </dd></dl>
 
 <dl class="py method">
@@ -449,7 +504,7 @@ calib (bool): launching or not the synthetic calibration</p>
 
 <dl class="py method">
 <dt id="wfSensors.pyramidWFS.reconNonLinear">
-<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.reconNonLinear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.pyramidWFS.reconNonLinear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-linear reconstructor using GS algorithm
 img: PWFS recorded image (dark removed)
 nIter: number of iteration for the reconstructor</p>
@@ -469,9 +524,12 @@ nIter: number of iteration for the reconstructor</p>
 
 <dl class="py class">
 <dt id="wfSensors.zernikeWFS">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">zernikeWFS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil_tel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS" title="Permalink to this definition">¶</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>This is a class to use the Zernike WFS</p>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">wfSensors.</span></code><code class="sig-name descname"><span class="pre">zernikeWFS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pupil_tel</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">position_pups</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dimple_pixels</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="#wfSensors.WavefrontSensor" title="wfSensors.WavefrontSensor"><code class="xref py py-class docutils literal notranslate"><span class="pre">wfSensors.WavefrontSensor</span></code></a></p>
+<p>This is a class to use the Zernike WFS
+Class went rhough major modification after OWL program 2023.
+- Using new way to simulate ZWFS (Soummer 2007)
+- Enabling to switch between vortex and scalar mask</p>
 <dl class="py attribute">
 <dt id="wfSensors.zernikeWFS.pupil_tel">
 <code class="sig-name descname"><span class="pre">pupil_tel</span></code><a class="headerlink" href="#wfSensors.zernikeWFS.pupil_tel" title="Permalink to this definition">¶</a></dt>
@@ -612,14 +670,39 @@ nIter: number of iteration for the reconstructor</p>
 
 <dl class="py method">
 <dt id="wfSensors.zernikeWFS.calibrate">
-<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.calibrate" title="Permalink to this definition">¶</a></dt>
-<dd><p>Synthetic interaction matrix</p>
+<code class="sig-name descname"><span class="pre">calibrate</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp_calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.calibrate" title="Permalink to this definition">¶</a></dt>
+<dd><p>Push-pull calibration for the given DM. It can be zonal or modal (only Zernike modes for now).</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>dm (DM_seal object): DM for used for calibration
+modal (bool): Set if the calibration is done on a modal basis - Zernike modes (=1) - or not (=0)</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.zernikeWFS.cropImg">
-<code class="sig-name descname"><span class="pre">cropImg</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.cropImg" title="Permalink to this definition">¶</a></dt>
-<dd><p>crop Image to have same size as true image</p>
+<dt id="wfSensors.zernikeWFS.calibrateSimu">
+<code class="sig-name descname"><span class="pre">calibrateSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mode2phase</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">phaseRef</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.calibrateSimu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute synthetic interaction matrix.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>mode2phase (np.array): mode to calibrate. By default, it is the pokeMatrix that was loaded.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.zernikeWFS.compute_cmdMat">
+<code class="sig-name descname"><span class="pre">compute_cmdMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.compute_cmdMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Compute pseudo inverse of the interaction matrix.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>threshold (float - optional): conditionning for pseudo-inverse computation.</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
@@ -646,21 +729,38 @@ nIter: number of iteration for the reconstructor</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="wfSensors.zernikeWFS.load_intMat">
+<code class="sig-name descname"><span class="pre">load_intMat</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">intMat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dm</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">modal</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.load_intMat" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load true interaction matrix already computed before.
+Precise if it is a modal or a zonal matrix (zonal by default).</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>intMat (np.array): Interaction Matrix to be loaded
+dm (DM_seal object): DM associated with this interaction matrix
+modal (bool): if it is modal or not (=0 by default)</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="py method">
 <dt id="wfSensors.zernikeWFS.load_pokeMatrix">
-<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">validActuators</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">thres</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load poke matrix computed through calibration process</p>
+<code class="sig-name descname"><span class="pre">load_pokeMatrix</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pokeMatrix</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calib</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.load_pokeMatrix" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load a poke matrix computed through calibration process, and compute its pseudo-inverse.
+It is useful to project reconstructed phase onto DM actuators.(This poke matrix is therefore associated with a diven dm.)</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Parameters:</dt><dd><p>pokeMatrix (np.array): poke phase in WFS space
+calib (bool): launching or not the synthetic calibration</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.zernikeWFS.makeMask">
-<code class="sig-name descname"><span class="pre">makeMask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">diameter</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.makeMask" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">makeMask</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">depth</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.makeMask" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
-
-<dl class="py method">
-<dt id="wfSensors.zernikeWFS.mapValidCmd">
-<code class="sig-name descname"><span class="pre">mapValidCmd</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cmd_vector</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.mapValidCmd" title="Permalink to this definition">¶</a></dt>
-<dd><p>Map commands vector to map</p>
-</dd></dl>
 
 <dl class="py method">
 <dt id="wfSensors.zernikeWFS.propag">
@@ -669,19 +769,8 @@ nIter: number of iteration for the reconstructor</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.zernikeWFS.propagRef">
-<code class="sig-name descname"><span class="pre">propagRef</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.propagRef" title="Permalink to this definition">¶</a></dt>
-<dd><p>PROPAGATION of the reference EM field</p>
-</dd></dl>
-
-<dl class="py method">
-<dt id="wfSensors.zernikeWFS.reconDiversity">
-<code class="sig-name descname"><span class="pre">reconDiversity</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_diversity_p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_diversity_m</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">diversity_map</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconDiversity" title="Permalink to this definition">¶</a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
 <dt id="wfSensors.zernikeWFS.reconGS">
-<code class="sig-name descname"><span class="pre">reconGS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconGS" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reconGS</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconGS" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-linear reconstructor using GS algorithm
 img: ZWFS recorded image (dark removed) with two pupils inside
 nIter: number of iteration for the reconstructor</p>
@@ -689,7 +778,7 @@ nIter: number of iteration for the reconstructor</p>
 
 <dl class="py method">
 <dt id="wfSensors.zernikeWFS.reconJPL">
-<code class="sig-name descname"><span class="pre">reconJPL</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconJPL" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reconJPL</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_r</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconJPL" title="Permalink to this definition">¶</a></dt>
 <dd><p>Non-linear reconstructor using Iterative algorithm
 img: ZWFS recorded image (dark removed)
 nIter: number of iteration for the reconstructor</p>
@@ -697,13 +786,26 @@ nIter: number of iteration for the reconstructor</p>
 
 <dl class="py method">
 <dt id="wfSensors.zernikeWFS.reconLinear">
-<code class="sig-name descname"><span class="pre">reconLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconLinear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reconLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_input</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconLinear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Linear reconstructor using synthetic interaction matrix</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="wfSensors.zernikeWFS.reconLinearModel">
+<code class="sig-name descname"><span class="pre">reconLinearModel</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconLinearModel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.zernikeWFS.reconLinearModel_analytique">
+<code class="sig-name descname"><span class="pre">reconLinearModel_analytique</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_r</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconLinearModel_analytique" title="Permalink to this definition">¶</a></dt>
+<dd><p>Linear reconstructor using Iterative algorithm
+img: ZWFS recorded image (dark removed)
+nIter: number of iteration for the reconstructor</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="wfSensors.zernikeWFS.reconNonLinear">
-<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">psf_img</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconNonLinear" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.reconNonLinear" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">
@@ -713,8 +815,13 @@ nIter: number of iteration for the reconstructor</p>
 </dd></dl>
 
 <dl class="py method">
-<dt id="wfSensors.zernikeWFS.roi">
-<code class="sig-name descname"><span class="pre">roi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.roi" title="Permalink to this definition">¶</a></dt>
+<dt id="wfSensors.zernikeWFS.roi_scalar">
+<code class="sig-name descname"><span class="pre">roi_scalar</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.roi_scalar" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="wfSensors.zernikeWFS.roi_vector">
+<code class="sig-name descname"><span class="pre">roi_vector</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#wfSensors.zernikeWFS.roi_vector" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py method">

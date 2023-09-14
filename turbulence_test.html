@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Startup - Debug mode &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <title>turbulence_test module &mdash; libSEAL 1.0.0 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
@@ -15,9 +15,7 @@
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Example: Close loop on turbulence" href="closeLoopTurbulence.html" />
-    <link rel="prev" title="Quick startup" href="quickStartup.html" /> 
+    <link rel="search" title="Search" href="search.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -64,9 +62,9 @@
 <li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
-<ul class="current">
+<ul>
 <li class="toctree-l1"><a class="reference internal" href="quickStartup.html">Quick startup</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Startup - Debug mode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="debugStartup.html">Startup - Debug mode</a></li>
 <li class="toctree-l1"><a class="reference internal" href="closeLoopTurbulence.html">Example: Close loop on turbulence</a></li>
 </ul>
 
@@ -84,9 +82,9 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
-      <li class="breadcrumb-item active">Startup - Debug mode</li>
+      <li class="breadcrumb-item active">turbulence_test module</li>
       <li class="wy-breadcrumbs-aside">
-            <a href="_sources/debugStartup.rst.txt" rel="nofollow"> View page source</a>
+            <a href="_sources/turbulence_test.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
@@ -94,33 +92,38 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <section id="module-debugStartup">
-<span id="startup-debug-mode"></span><h1>Startup - Debug mode<a class="headerlink" href="#module-debugStartup" title="Permalink to this headline">¶</a></h1>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">run</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="n">lab</span><span class="o">/</span><span class="n">libSEAL</span><span class="o">/</span><span class="n">debugStartup</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<p>Script to debug closed loop on SEAL static aberrations.
-To be used if <strong>quickStartup</strong> script does not work. Usually it is because:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>New pupil stop</p></li>
-<li><p>Pupil moved on WFS</p></li>
-<li><p>DMs moved w.r.t pupil</p></li>
-</ul>
-</div></blockquote>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Code to be excuted with each section at a time</p>
-</div>
+  <section id="module-turbulence_test">
+<span id="turbulence-test-module"></span><h1>turbulence_test module<a class="headerlink" href="#module-turbulence_test" title="Permalink to this headline">¶</a></h1>
+<p>Turbulence generator class.</p>
+<dl class="py class">
+<dt id="turbulence_test.atm">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">turbulence_test.</span></code><code class="sig-name descname"><span class="pre">atm</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">telescope_diameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wavelength</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.350000000000001e-07</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fried_parameter</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.15</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">velocity</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">outer_scale</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">40</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeSampling</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.001</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wfAffector</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nModes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turbulence_test.atm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This is a class to generate turublence.</p>
+<dl class="py attribute">
+<dt id="turbulence_test.atm.model">
+<code class="sig-name descname"><span class="pre">model</span></code><a class="headerlink" href="#turbulence_test.atm.model" title="Permalink to this definition">¶</a></dt>
+<dd><p>model of the DM, can be either ‘mems’ or ‘alpao’</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>string</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="turbulence_test.atm.setTurbu">
+<code class="sig-name descname"><span class="pre">setTurbu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">t</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#turbulence_test.atm.setTurbu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
 </section>
 
 
            </div>
           </div>
-          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="quickStartup.html" class="btn btn-neutral float-left" title="Quick startup" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="closeLoopTurbulence.html" class="btn btn-neutral float-right" title="Example: Close loop on turbulence" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
-    </div>
+          <footer>
 
   <hr/>
 

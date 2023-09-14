@@ -43,7 +43,14 @@
               <p><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
+</ul>
+<p><span class="caption-text">TUTORIALS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slmAsDM.html">Using SLM as a DM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbuOnSLM.html">Applyting turbulence on SLM</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
@@ -55,7 +62,6 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Useful tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -99,6 +105,16 @@
 - N: Number of modes
 - nPx: Resolution in pupil
 - pupil</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="tools.MFT">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">MFT</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_sampling</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.MFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>MATRIX FOURIER TRANSFORM - From pupil plane to focal plane
+- E = EM field in the pupil
+- fourier_sampling = samplimg in pixels per L/D
+- fourier_extension = Field of View in focal plane in L/D
+- pupil_sampling = pupil sampling in pixels in D in the pupil plane EM field E</p>
 </dd></dl>
 
 <dl class="py function">
@@ -157,7 +173,7 @@
 
 <dl class="py function">
 <dt id="tools.fig">
-<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">fig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fig" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">fig</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">mat</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmin</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">vmax</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fig" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 <dl class="py function">
@@ -171,9 +187,30 @@
 <dd></dd></dl>
 
 <dl class="py function">
+<dt id="tools.fresnelPropag">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">fresnelPropag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Ein</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">px_size</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">z</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">wvl</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">6.33e-07</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.fresnelPropag" title="Permalink to this definition">¶</a></dt>
+<dd><p>NOT READY YET…..
+FRESNEL Propagation - Near-field.
+Ein : Entrance EM field
+px_size : pixels scale (in meters)
+z : distance where output EM field is computed (in meters)
+lambda : wavelength (in meters) - default value = SEAL value</p>
+</dd></dl>
+
+<dl class="py function">
 <dt id="tools.gauss2d">
 <code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">gauss2d</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">sigma</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.gauss2d" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
+
+<dl class="py function">
+<dt id="tools.iMFT">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">iMFT</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">E</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_sampling</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">pupil_extension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">fourier_sampling</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.iMFT" title="Permalink to this definition">¶</a></dt>
+<dd><p>INVERSE MATRIX FOURIER TRANSFORM - From focal plane to pupil plane
+- E = EM field in the focal plane
+- pupil_sampling =  pupil sampling in pixels in D
+- pupil_extension = number of Diameter in EM field returned
+- fourier_sampling = in pixels per L/D in the focal plane EM field E</p>
+</dd></dl>
 
 <dl class="py function">
 <dt id="tools.ifft_centre">
@@ -210,6 +247,11 @@ Return:</p>
 </dd>
 </dl>
 </dd></dl>
+
+<dl class="py function">
+<dt id="tools.make_keck_aperture">
+<code class="sig-prename descclassname"><span class="pre">tools.</span></code><code class="sig-name descname"><span class="pre">make_keck_aperture</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nPx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">normalized</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_secondary</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_spiders</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">with_segment_gaps</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gap_padding</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1.0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">segment_transmissions</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">return_segments</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#tools.make_keck_aperture" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
 
 <dl class="py function">
 <dt id="tools.maskFineTuning">

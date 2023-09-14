@@ -16,7 +16,7 @@
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Calibration" href="calibration.html" />
+    <link rel="next" title="Quick startup" href="quickStartup.html" />
     <link rel="prev" title="Performance" href="performance.html" /> 
 </head>
 
@@ -43,7 +43,14 @@
               <p><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
+</ul>
+<p><span class="caption-text">TUTORIALS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slmAsDM.html">Using SLM as a DM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbuOnSLM.html">Applyting turbulence on SLM</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
@@ -55,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -92,9 +98,14 @@
 <span id="science"></span><h1>Science<a class="headerlink" href="#module-science" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="science.coronagraph">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">science.</span></code><code class="sig-name descname"><span class="pre">coronagraph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.9</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FPM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">science.</span></code><code class="sig-name descname"><span class="pre">coronagraph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FPM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Coronagraph class used to take images with focal plane camera and modeling coronagraph optical propagation</p>
+<dl class="py method">
+<dt id="science.coronagraph.backPropag">
+<code class="sig-name descname"><span class="pre">backPropag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EM_fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EM_lyot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph.backPropag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
 <dl class="py method">
 <dt id="science.coronagraph.getImage">
 <code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph.getImage" title="Permalink to this definition">¶</a></dt>
@@ -116,8 +127,61 @@
 <dd></dd></dl>
 
 <dl class="py method">
+<dt id="science.coronagraph.reconNonLinear">
+<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_lyot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph.reconNonLinear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Non-linear reconstructor using GS algorithm
+img_fp: coronaographic focal plane image
+img_lyot: image of light rejected by Lyot stop</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="science.coronagraph.roi">
 <code class="sig-name descname"><span class="pre">roi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph.roi" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="science.coronagraph2">
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">science.</span></code><code class="sig-name descname"><span class="pre">coronagraph2</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">A</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">shannon</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">2.2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">cam</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">FPM</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">L</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Coronagraph class used to take images with focal plane camera and modeling coronagraph optical propagation</p>
+<dl class="py method">
+<dt id="science.coronagraph2.backPropag">
+<code class="sig-name descname"><span class="pre">backPropag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">EM_fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">EM_lyot</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.backPropag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.getImage">
+<code class="sig-name descname"><span class="pre">getImage</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.getImage" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.getImageSimu">
+<code class="sig-name descname"><span class="pre">getImageSimu</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.getImageSimu" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.getPSF">
+<code class="sig-name descname"><span class="pre">getPSF</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.getPSF" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.propag">
+<code class="sig-name descname"><span class="pre">propag</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">amp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.propag" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.reconNonLinear">
+<code class="sig-name descname"><span class="pre">reconNonLinear</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img_fp</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">img_lyot</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">nIterRec</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.reconNonLinear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Non-linear reconstructor using GS algorithm
+img_fp: coronaographic focal plane image
+img_lyot: image of light rejected by Lyot stop</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="science.coronagraph2.roi">
+<code class="sig-name descname"><span class="pre">roi</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">img</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#science.coronagraph2.roi" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 
 </dd></dl>
@@ -129,7 +193,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="performance.html" class="btn btn-neutral float-left" title="Performance" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="calibration.html" class="btn btn-neutral float-right" title="Calibration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="quickStartup.html" class="btn btn-neutral float-right" title="Quick startup" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

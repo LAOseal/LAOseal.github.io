@@ -43,7 +43,14 @@
               <p><span class="caption-text">Getting started:</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="infoSEAL.html">Information about SEAL</a></li>
-<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Getting started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gitInfo.html">Before starting</a></li>
+</ul>
+<p><span class="caption-text">TUTORIALS:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="basicStartup.html">Basic startup</a></li>
+<li class="toctree-l1"><a class="reference internal" href="detailTuto.html">In more details</a></li>
+<li class="toctree-l1"><a class="reference internal" href="slmAsDM.html">Using SLM as a DM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="turbuOnSLM.html">Applyting turbulence on SLM</a></li>
 </ul>
 <p><span class="caption-text">SEAL Classes:</span></p>
 <ul class="current">
@@ -55,7 +62,6 @@
 <li class="toctree-l1"><a class="reference internal" href="tools.html">Useful tools</a></li>
 <li class="toctree-l1"><a class="reference internal" href="performance.html">Performance</a></li>
 <li class="toctree-l1"><a class="reference internal" href="science.html">Science</a></li>
-<li class="toctree-l1"><a class="reference internal" href="calibration.html">Calibration</a></li>
 </ul>
 <p><span class="caption-text">Useful scripts:</span></p>
 <ul>
@@ -99,8 +105,55 @@
 </dl>
 <dl class="py class">
 <dt id="cameras.Andor_camera">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">cameras.</span></code><code class="sig-name descname"><span class="pre">Andor_camera</span></code><a class="headerlink" href="#cameras.Andor_camera" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">cameras.</span></code><code class="sig-name descname"><span class="pre">Andor_camera</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">binning</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mode</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'small'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">framerate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">200</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt id="cameras.Andor_camera.get">
+<code class="sig-name descname"><span class="pre">get</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.get" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get image from camera</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.getDark">
+<code class="sig-name descname"><span class="pre">getDark</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">nFrames</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.getDark" title="Permalink to this definition">¶</a></dt>
+<dd><p>Take Dark image</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.get_exp">
+<code class="sig-name descname"><span class="pre">get_exp</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.get_exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get exposure time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.get_fps">
+<code class="sig-name descname"><span class="pre">get_fps</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.get_fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get frames per second</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.get_header">
+<code class="sig-name descname"><span class="pre">get_header</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.get_header" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.set_exp">
+<code class="sig-name descname"><span class="pre">set_exp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.set_exp" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set exposure time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.set_fps">
+<code class="sig-name descname"><span class="pre">set_fps</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpsec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.set_fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set frames per second</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.Andor_camera.shutdown">
+<code class="sig-name descname"><span class="pre">shutdown</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.Andor_camera.shutdown" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close connexion with camera</p>
+</dd></dl>
+
 </dd></dl>
 
 <dl class="py class">
@@ -191,6 +244,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt id="cameras.blackFly_camera.get_fps">
+<code class="sig-name descname"><span class="pre">get_fps</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.get_fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get frames per second</p>
+</dd></dl>
+
+<dl class="py method">
 <dt id="cameras.blackFly_camera.get_header">
 <code class="sig-name descname"><span class="pre">get_header</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.get_header" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
@@ -199,6 +258,12 @@
 <dt id="cameras.blackFly_camera.set_exp">
 <code class="sig-name descname"><span class="pre">set_exp</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">expt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.set_exp" title="Permalink to this definition">¶</a></dt>
 <dd><p>Set exposure time</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="cameras.blackFly_camera.set_fps">
+<code class="sig-name descname"><span class="pre">set_fps</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fpsec</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">print_output</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#cameras.blackFly_camera.set_fps" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set frames per second</p>
 </dd></dl>
 
 <dl class="py method">
